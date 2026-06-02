@@ -17,11 +17,11 @@
     <div class="row g-3 mb-4 info-cards">
         <div class="col-lg-4 col-sm-6">
             <div class="card info-card shadow-sm">
-                <a href="{{ route('admin.user.index') }}">
+                <a href="{{ route('admin.user.index',['school'=>1]) }}">
                 <div class="card-body">
                     <div>
                         <p>Total School Students(Admitted)</p>
-                        <h3 class="card-count">👤 0</h3>
+                        <h3 class="card-count">👤 {{ number_format($dashboardData['schools'] ?? 0) }}</h3>
                     </div>
                     <div class="card-icon bg-danger text-white rounded-circle d-flex align-items-center justify-content-center">
                         <span class="material-symbols-outlined">account_balance_wallet</span>
@@ -32,7 +32,7 @@
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="card info-card shadow-sm">
-                <a href="{{ route('admin.user.index') }}">
+                <a href="{{ route('admin.user.index',['college'=>1]) }}">
                 <div class="card-body">
                     <div>
                         <p>Total College Students(Admitted)</p>
@@ -47,11 +47,11 @@
         </div>
         <div class="col-lg-4 col-sm-6">
             <div class="card info-card shadow-sm">
-                <a href="{{ route('admin.user.index') }}">
+                <a href="{{ route('admin.user.index',['university'=>1]) }}">
                 <div class="card-body">
                     <div>
                         <p>Total University Students(Admitted)</p>
-                        <h3 class="card-count">👤 0</h3>
+                        <h3 class="card-count">👤 {{ number_format($dashboardData['versities'] ?? 0) }}</h3>
                     </div>
                     <div class="card-icon bg-danger text-white rounded-circle d-flex align-items-center justify-content-center">
                         <span class="material-symbols-outlined">account_balance_wallet</span>

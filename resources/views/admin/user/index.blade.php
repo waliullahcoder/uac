@@ -136,6 +136,9 @@
                 type: "GET",
                 data: function (data) {
                     data.type = $('#filter').val();
+                    data.school = "{{ request('school') }}";
+                    data.college = "{{ request('college') }}";
+                    data.university = "{{ request('university') }}";
                 }
             },
 

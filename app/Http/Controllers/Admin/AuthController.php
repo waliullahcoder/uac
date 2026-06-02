@@ -183,7 +183,9 @@ class AuthController extends Controller
             $monthlySales[] = \App\Models\Sales::whereBetween('created_at', [$monthStart, $monthEnd])->sum('net_amount');
             $monthlyExpense[] = \App\Models\Expense::whereBetween('created_at', [$monthStart, $monthEnd])->sum('amount');
         }
+        $schools= User::where('exam_name','School')->count();
         $colleges= User::where('exam_name','SSC')->count();
+        $versities= User::where('exam_name','HSC')->count();
 
         $dashboardData = [
             'totalExpense' => $totalExpense,
@@ -196,6 +198,8 @@ class AuthController extends Controller
             'monthlyExpense' => $monthlyExpense,
             'months' => $months,
             'colleges' =>$colleges,
+            'schools' =>$schools,
+            'versities' =>$versities,
         ];
 
         return view('admin.auth.dashbaord', compact('dashboardData'));

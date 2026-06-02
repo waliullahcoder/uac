@@ -43,11 +43,21 @@ class AdminController extends Controller
             'class' => 'btn btn-sm btn-primary mw-fit border-0 fs-15',
         ]];
 
-        return HelperClass::resourceDataView(
-            $this->model::with('roles')
+          $query = $this->model::with('roles')
                 ->whereNotIn('id', [Auth::user()->id])
                 ->whereNotIn('user_name', ['admin'])
-                ->orderBy('id', 'desc'),
+                ->orderBy('id', 'desc');
+            if (request('college') == 1) {
+                $query->where('exam_name', 'SSC');
+            }
+            if (request('school') == 1) {
+                $query->where('exam_name', 'School');
+            }
+            if (request('university') == 1) {
+                $query->where('exam_name', 'HSC');
+            }
+        return HelperClass::resourceDataView(
+            $query,
             null,
             $addition_btns,
             $this->path,
