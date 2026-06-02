@@ -98,6 +98,7 @@ class AuthController extends Controller
                 $investQty       = $distribution->invest_qty;
             }
 
+    
             $data[] = [
                 'product'           => $item,
                 'production_qty'    => $productionQty,
@@ -182,6 +183,7 @@ class AuthController extends Controller
             $monthlySales[] = \App\Models\Sales::whereBetween('created_at', [$monthStart, $monthEnd])->sum('net_amount');
             $monthlyExpense[] = \App\Models\Expense::whereBetween('created_at', [$monthStart, $monthEnd])->sum('amount');
         }
+        $colleges= User::where('exam_name','SSC')->count();
 
         $dashboardData = [
             'totalExpense' => $totalExpense,
@@ -193,6 +195,7 @@ class AuthController extends Controller
             'monthlySales' => $monthlySales,
             'monthlyExpense' => $monthlyExpense,
             'months' => $months,
+            'colleges' =>$colleges,
         ];
 
         return view('admin.auth.dashbaord', compact('dashboardData'));

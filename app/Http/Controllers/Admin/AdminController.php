@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
@@ -42,7 +43,16 @@ class AdminController extends Controller
             'class' => 'btn btn-sm btn-primary mw-fit border-0 fs-15',
         ]];
 
-        return HelperClass::resourceDataView($this->model::with('roles')->whereNotIn('id', [Auth::user()->id])->whereNotIn('user_name', ['admin'])->orderBy('id', 'desc'), null, $addition_btns, $this->path, $this->title);
+        return HelperClass::resourceDataView(
+            $this->model::with('roles')
+                ->whereNotIn('id', [Auth::user()->id])
+                ->whereNotIn('user_name', ['admin'])
+                ->orderBy('id', 'desc'),
+            null,
+            $addition_btns,
+            $this->path,
+            $this->title
+        );
     }
 
     /**
@@ -60,32 +70,69 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name'       => ['required', 'string', 'max:255'],
-            'user_name'  => ['required', 'string', 'unique:users,user_name'],
-            'email'      => ['nullable', 'email', 'unique:users,email'],
-            'phone'      => ['nullable', 'unique:users,phone'],
-            'password'   => ['required', Password::min(8), 'confirmed'],
-            // 'password'   => ['required', Password::min(8)->letters()->mixedCase()->numbers()->symbols(), 'confirmed'],
-            'role_id'    => ['required', 'exists:roles,id'],
-            'role_status'    => ['required'],
-            'image'      => ['nullable', 'image'],
-        ]);
+    
+        $user = new User();
 
-        $userData = [
-            'name'        => $validated['name'],
-            'user_name'   => $validated['user_name'],
-            'email'       => $validated['email'],
-            'phone'       => $validated['phone'],
-            'role_status'   => $validated['role_status'],
-            'password'    => Hash::make($validated['password']),
-            'image'       => isset($validated['image']) ? HelperClass::saveImage($validated['image'], 300, $this->path) : null,
-            'created_by'  => Auth::id(),
-        ];
+            $request->validate([
+                'name'  => 'required|string|max:255',
+                'email' => 'required|email|unique:users,email,' . $user->id,
+                'phone' => 'nullable|string|max:20',
+                'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            ]);
 
-        $user = $this->model::create($userData);
+            $user->name               = $request->name;
+            $user->email              = $request->email;
+            $user->phone              = $request->phone;
+            $user->address            = $request->address;
 
-        $user->assignRole(Role::findById($validated['role_id']));
+            $user->father_name        = $request->father_name;
+            $user->mother_name        = $request->mother_name;
+
+            $user->date_of_birth      = $request->date_of_birth;
+            $user->admission_date     = $request->admission_date;
+
+            $user->blood_group        = $request->blood_group;
+            $user->group              = $request->group;
+
+            $user->exam_name          = $request->exam_name;
+            $user->institution        = $request->institution;
+            $user->board              = $request->board;
+            $user->edu_group          = $request->edu_group;
+
+            $user->year               = $request->year;
+            $user->grade              = $request->grade;
+
+            $user->gpa_with_4th       = $request->gpa_with_4th;
+            $user->gpa_without_4th    = $request->gpa_without_4th;
+
+            $user->payment_method     = $request->payment_method;
+            $user->payment_mobile     = $request->payment_mobile;
+            $user->user_name     = $request->user_name;
+            $user->version     = $request->version;
+            $user->role_status       = 0;
+            $user->password     = Hash::make($request->phone);
+
+        
+            /* ===== IMAGE UPDATE ===== */
+            if ($request->hasFile('image')) {
+
+                // delete old image
+                if ($user->image && Storage::disk('public')->exists($user->image)) {
+                    Storage::disk('public')->delete($user->image);
+                }
+
+                // save new image
+                $user->image = HelperClass::saveImage(
+                    $request->file('image'),
+                    800,
+                    'users/profile',
+                    $user->image
+                );
+            }
+        
+            $user->save();
+
+     
 
         return redirect()->route("admin.{$this->path}.index")->withSuccessMessage('Created Successfully!');
     }
@@ -123,15 +170,59 @@ class AdminController extends Controller
         ]);
 
         $data = $this->model::findOrFail($id);
-        $data->update([
-            'name'       => $request->name,
-            'user_name'  => $request->user_name,
-            'email'      => $request->email,
-            'phone'      => $request->phone,
-            'role_status'  => $request->role_status,
-            'image'       => isset($validated['image']) ? HelperClass::saveImage($validated['image'], 300, $this->path, $data->image) : $data->image,
-            'updated_by' => Auth::id(),
-        ]);
+       
+        if ($request->hasFile('image')) {
+                // delete old image
+                if ($data->image && Storage::disk('public')->exists($data->image)) {
+                    Storage::disk('public')->delete($data->image);
+                }
+
+                // save new image
+                $data->image = HelperClass::saveImage(
+                    $request->file('image'),
+                    800,
+                    'users/profile',
+                    $data->image
+                );
+            }
+         $data->update([
+                'name'                => $request->name,
+                'user_name'           => $request->user_name,
+                'email'               => $request->email,
+                'phone'               => $request->phone,
+                'address'             => $request->address,
+
+                // Student Information
+                'father_name'         => $request->father_name,
+                'mother_name'         => $request->mother_name,
+                'date_of_birth'       => $request->date_of_birth,
+                'admission_date'      => $request->admission_date,
+                'blood_group'         => $request->blood_group,
+                'group'               => $request->group,
+                'version'             => $request->version,
+
+                // Academic Information
+                'exam_name'           => $request->exam_name,
+                'institution'         => $request->institution,
+                'board'               => $request->board,
+                'edu_group'           => $request->edu_group,
+                'year'                => $request->year,
+                'grade'               => $request->grade,
+                'gpa_with_4th'        => $request->gpa_with_4th,
+                'gpa_without_4th'     => $request->gpa_without_4th,
+
+                // Payment Information
+                'payment_method'      => $request->payment_method,
+                'payment_mobile'      => $request->payment_mobile,
+
+                // System
+                'role_status'         => $request->role_status,
+
+                // Image
+                // 'image'       => isset($validated['image']) ? HelperClass::saveImage($validated['image'], 300, $this->path, $data->image) : $data->image,
+
+                'updated_by'          => Auth::id(),
+            ]);
 
         $role = Role::findById($request->role_id);
         $data->syncRoles($role);

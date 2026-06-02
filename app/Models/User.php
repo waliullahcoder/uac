@@ -27,6 +27,31 @@ class User extends Authenticatable
         'address',
         'image',
         'cover_image',
+        'version',
+
+        // Student Information
+        'mother_name',
+        'father_name',
+        'date_of_birth',
+        'admission_date',
+
+        // Academic Information
+        'blood_group',
+        'group',
+        'exam_name',
+        'institution',
+        'board',
+        'edu_group',
+        'year',
+        'grade',
+        'gpa_with_4th',
+        'gpa_without_4th',
+
+        // Payment Information
+        'payment_method',
+        'payment_mobile',
+
+        // System
         'role_status',
         'status',
         'email_verified_at',

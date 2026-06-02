@@ -223,7 +223,13 @@
                     </ul>
                     <div class="desk-top-login">
                         <div class="nav-item login-button">
-                            <a href="{{route('auth.signupPage')}}" type="button" class="btn btn_warning">Admmission</a>
+                              @if(Auth::check())
+                               <a href="{{ Auth::user()->role_status == 0 ? route('frontend.user.dashboard') : route('admin.dashboard') }}" type="button" class="btn btn_warning" style="color:black; background:#bbd1ca;">👤 {{ Auth::user()->name }}</a>
+                                    
+                                @else
+                                    <a href="{{route('auth.signupPage')}}" type="button" class="btn btn_warning">Admmission</a>
+                                @endif
+                          
                         </div>
                     </div>
 

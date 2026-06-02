@@ -109,16 +109,16 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\laragon\\www\\uac\\resources\\views',
+      0 => 'E:\\laragon\\www\\uac\\resources\\views',
     ),
-    'compiled' => 'D:\\laragon\\www\\uac\\storage\\framework\\views',
+    'compiled' => 'E:\\laragon\\www\\uac\\storage\\framework\\views',
   ),
   'app' => 
   array (
-    'name' => 'UAC',
+    'name' => 'Books & Books',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://127.0.0.1:8000',
+    'url' => 'http://127.0.0.1:8000/',
     'frontend_url' => 'http://localhost:3000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
@@ -303,8 +303,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\laragon\\www\\uac\\storage\\framework/cache/data',
-        'lock_path' => 'D:\\laragon\\www\\uac\\storage\\framework/cache/data',
+        'path' => 'E:\\laragon\\www\\uac\\storage\\framework/cache/data',
+        'lock_path' => 'E:\\laragon\\www\\uac\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -348,7 +348,7 @@
         'driver' => 'octane',
       ),
     ),
-    'prefix' => 'uac_cache_',
+    'prefix' => 'books_books_cache_',
   ),
   'database' => 
   array (
@@ -446,7 +446,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'uac_database_',
+        'prefix' => 'books_books_database_',
         'persistent' => false,
       ),
       'default' => 
@@ -580,10 +580,10 @@
     'convert_entities' => true,
     'options' => 
     array (
-      'font_dir' => 'D:\\laragon\\www\\uac\\storage\\fonts',
-      'font_cache' => 'D:\\laragon\\www\\uac\\storage\\fonts',
-      'temp_dir' => 'C:\\Users\\waliu\\AppData\\Local\\Temp',
-      'chroot' => 'D:\\laragon\\www\\uac',
+      'font_dir' => 'E:\\laragon\\www\\uac\\storage\\fonts',
+      'font_cache' => 'E:\\laragon\\www\\uac\\storage\\fonts',
+      'temp_dir' => 'C:\\Users\\user\\AppData\\Local\\Temp',
+      'chroot' => 'E:\\laragon\\www\\uac',
       'allowed_protocols' => 
       array (
         'data://' => 
@@ -636,7 +636,7 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\laragon\\www\\uac\\storage\\app/private',
+        'root' => 'E:\\laragon\\www\\uac\\storage\\app/private',
         'serve' => true,
         'throw' => false,
         'report' => false,
@@ -644,8 +644,8 @@
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\laragon\\www\\uac\\storage\\app/public',
-        'url' => 'http://127.0.0.1:8000/storage',
+        'root' => 'E:\\laragon\\www\\uac\\storage\\app/public',
+        'url' => 'http://127.0.0.1:8000//storage',
         'visibility' => 'public',
         'throw' => false,
         'report' => false,
@@ -666,7 +666,7 @@
     ),
     'links' => 
     array (
-      'D:\\laragon\\www\\uac\\public\\storage' => 'D:\\laragon\\www\\uac\\storage\\app/public',
+      'E:\\laragon\\www\\uac\\public\\storage' => 'E:\\laragon\\www\\uac\\storage\\app/public',
     ),
   ),
   'laravolt' => 
@@ -692,8 +692,8 @@
       'rtl' => false,
       'fonts' => 
       array (
-        0 => 'D:\\laragon\\www\\uac\\config\\laravolt/../fonts/OpenSans-Bold.ttf',
-        1 => 'D:\\laragon\\www\\uac\\config\\laravolt/../fonts/rockwell.ttf',
+        0 => 'E:\\laragon\\www\\uac\\config\\laravolt/../fonts/OpenSans-Bold.ttf',
+        1 => 'E:\\laragon\\www\\uac\\config\\laravolt/../fonts/rockwell.ttf',
       ),
       'foregrounds' => 
       array (
@@ -829,14 +829,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\laragon\\www\\uac\\storage\\logs/laravel.log',
+        'path' => 'E:\\laragon\\www\\uac\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\laragon\\www\\uac\\storage\\logs/laravel.log',
+        'path' => 'E:\\laragon\\www\\uac\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -901,7 +901,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\laragon\\www\\uac\\storage\\logs/laravel.log',
+        'path' => 'E:\\laragon\\www\\uac\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -979,7 +979,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\laragon\\www\\uac\\resources\\views/vendor/mail',
+        0 => 'E:\\laragon\\www\\uac\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -1138,7 +1138,7 @@
     'lifetime' => 2880,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\laragon\\www\\uac\\storage\\framework/sessions',
+    'files' => 'E:\\laragon\\www\\uac\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -1147,7 +1147,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'uac_session',
+    'cookie' => 'books_books_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -1158,7 +1158,7 @@
   'livewire' => 
   array (
     'class_namespace' => 'App\\Livewire',
-    'view_path' => 'D:\\laragon\\www\\uac\\resources\\views/livewire',
+    'view_path' => 'E:\\laragon\\www\\uac\\resources\\views/livewire',
     'layout' => 'components.layouts.app',
     'lazy_placeholder' => NULL,
     'temporary_file_upload' => 

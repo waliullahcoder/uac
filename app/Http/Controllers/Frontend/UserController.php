@@ -59,12 +59,19 @@ class UserController extends Controller
 
         public function signupPost(Request $request)
         {
-            
-            $request->validate([
-                'name'     => 'required|string|max:255',
-                'phone'    => ['required','regex:/^01[3-9]\d{8}$/','unique:users,phone'],
+          $request->validate([
+                'name'  => 'required|string|max:255',
+                'phone' => [
+                    'required',
+                    'regex:/^01[3-9]\d{8}$/',
+                    'unique:users,phone'
+                ],
+            ],[
+                'name.required' => 'Name is required',
+                'phone.required' => 'Phone number is required',
+                'phone.regex'    => 'Please enter a valid Bangladeshi phone number',
+                'phone.unique'   => 'This phone number already exists',
             ]);
-
             try {
             DB::transaction(function () use ($request) {
              // Create User section
@@ -79,45 +86,57 @@ class UserController extends Controller
                     })
                     ->first();
 
-                if (!$user) {
-               $user = User::create([
-                // Basic Info
-                'name'              => $request->name,
-                'mother_name'       => $request->mother_name,
-                'father_name'       => $request->father_name,
-                'phone'             => $request->phone,
-                'email'             => $request->email,
-                'address'           => $request->address,
-                'date_of_birth'     => $request->dob,
-                'admission_date'      => $request->admission_date,
+              if (!$user) {
 
-                // System Fields
-                'user_name'         => strtolower(str_replace(' ', '', $request->name)),
-                'password'          => Hash::make($request->phone),
-                'role_status'       => 0,
+                    $image = null;
 
-                // Academic Info
-                'blood_group'       => $request->blood_group,
-                'group'             => $request->group,
+                    if ($request->hasFile('profile_photo')) {
+                        $image = HelperClass::saveImage(
+                            $request->file('profile_photo'),
+                            300,
+                            'admin/avatar'
+                        );
+                    }
 
-                'exam_name'         => $request->exam_name,
-                'institution'       => $request->institution,
-                'board'             => $request->board,
-                'edu_group'         => $request->edu_group,
-                'year'              => $request->year,
-                'grade'             => $request->grade,
-                'gpa_with_4th'      => $request->gpa_with_4th,
-                'gpa_without_4th'   => $request->gpa_without_4th,
+                    $user = User::create([
 
-                // Payment Info
-                'payment_method'    => $request->payment_method,
-                'payment_mobile'    => $request->payment_mobile,
+                        // Basic Info
+                        'name'              => $request->name,
+                        'mother_name'       => $request->mother_name,
+                        'father_name'       => $request->father_name,
+                        'phone'             => $request->phone,
+                        'email'             => $request->email,
+                        'address'           => $request->address,
+                        'date_of_birth'     => $request->dob,
+                        'admission_date'    => $request->admission_date,
+                        'version'           => $request->version,
 
-                // Profile Image (if uploaded)
-                'profile_photo'     => $request->profile_photo_path ?? null,
-            ]);
+                        // System Fields
+                        'user_name'         => strtolower(str_replace(' ', '', $request->phone)),
+                        'password'          => Hash::make($request->phone),
+                        'role_status'       => 0,
 
-                Auth::login($user);
+                        // Academic Info
+                        'blood_group'       => $request->blood_group,
+                        'group'             => $request->group,
+                        'exam_name'         => $request->exam_name,
+                        'institution'       => $request->institution,
+                        'board'             => $request->board,
+                        'edu_group'         => $request->edu_group,
+                        'year'              => $request->year,
+                        'grade'             => $request->grade,
+                        'gpa_with_4th'      => $request->gpa_with_4th,
+                        'gpa_without_4th'   => $request->gpa_without_4th,
+
+                        // Payment Info
+                        'payment_method'    => $request->payment_method,
+                        'payment_mobile'    => $request->payment_mobile,
+
+                        // Profile Image
+                        'image'             => $image,
+                    ]);
+
+                    Auth::login($user);
                 }
                 $user_id = $user->id;
                 }
@@ -162,6 +181,7 @@ class UserController extends Controller
                 ]);
             });
         } catch (\Exception $e) {
+            dd($e);
             return back()->withErrors($e->getMessage());
         }
 
@@ -259,10 +279,36 @@ class UserController extends Controller
                 'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             ]);
 
-            $user->name  = $request->name;
-            $user->email = $request->email;
-            $user->phone = $request->phone;
-            $user->address = $request->address;
+            $user->name               = $request->name;
+            $user->email              = $request->email;
+            $user->phone              = $request->phone;
+            $user->address            = $request->address;
+
+            $user->father_name        = $request->father_name;
+            $user->mother_name        = $request->mother_name;
+
+            $user->date_of_birth      = $request->date_of_birth;
+            $user->admission_date     = $request->admission_date;
+
+            $user->blood_group        = $request->blood_group;
+            $user->group              = $request->group;
+
+            $user->exam_name          = $request->exam_name;
+            $user->institution        = $request->institution;
+            $user->board              = $request->board;
+            $user->edu_group          = $request->edu_group;
+
+            $user->year               = $request->year;
+            $user->grade              = $request->grade;
+
+            $user->gpa_with_4th       = $request->gpa_with_4th;
+            $user->gpa_without_4th    = $request->gpa_without_4th;
+
+            $user->payment_method     = $request->payment_method;
+            $user->payment_mobile     = $request->payment_mobile;
+            $user->version            = $request->version;
+
+            $user->save();
 
             /* ===== IMAGE UPDATE ===== */
             if ($request->hasFile('image')) {

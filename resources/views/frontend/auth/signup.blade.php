@@ -15,7 +15,7 @@
 
                     <div class="card-body p-4">
 
-                        <form action="{{ route('user.signinPost') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('user.signupPost') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <!-- BASIC INFO -->
@@ -49,7 +49,7 @@
 
                                 <div class="col-md-4">
                                     <label class="form-label">Date of Birth</label>
-                                    <input type="date" name="dob" class="form-control">
+                                    <input type="date" name="date_of_birth" class="form-control">
                                 </div>
 
                                 <!-- VERSION -->
@@ -103,6 +103,7 @@
                                     <label>Exam Name</label>
                                     <select name="exam_name" class="form-select">
                                         <option>SSC</option>
+                                        <option>School</option>
                                         <option>HSC</option>
                                         <option>University</option>
                                     </select>
@@ -209,7 +210,10 @@
                             </div>
 
                             <!-- SUBMIT -->
-                            <div class="text-end mt-4">
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="{{ route('auth.signinPage') }}" class="text-decoration-none">
+                                    Already have an account? <strong>Sign In</strong>
+                                </a>
                                 <button type="submit" class="btn btn-success px-4">
                                     Submit Form
                                 </button>
