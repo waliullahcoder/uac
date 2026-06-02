@@ -95,10 +95,10 @@
                                 <div class="about-us">
                                     <h3>About Us</h3>
                                     <ul>
-                                        <li><a href="https://uac-bd.com/about-us">About Us</a></li>
-                                        <li><a href="https://uac-bd.com/instructor">Instructor</a></li>
-                                        <li><a href="https://uac-bd.com/refund-policy">Refund Policy</a></li>
-                                        <li><a href="https://uac-bd.com/contact-us">Contact Us</a></li>
+                                        <li><a href="#/about-us">About Us</a></li>
+                                        <li><a href="#/instructor">Instructor</a></li>
+                                        <li><a href="#/refund-policy">Refund Policy</a></li>
+                                        <li><a href="#/contact-us">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,11 +106,11 @@
                                 <div class="resources">
                                     <h3>Resources</h3>
                                     <ul>
-                                        <li><a href="https://uac-bd.com/course">Courses</a></li>
-                                        <li><a href="https://uac-bd.com/blog">Our Blog</a></li>
-                                        <li><a href="https://uac-bd.com/terms-and-conditions">Terms & Conditions</a>
+                                        <li><a href="#/course">Courses</a></li>
+                                        <li><a href="#/blog">Our Blog</a></li>
+                                        <li><a href="#/terms-and-conditions">Terms & Conditions</a>
                                         </li>
-                                        <li><a href="https://uac-bd.com/privacy-policy">Privacy Policy</a></li>
+                                        <li><a href="#/privacy-policy">Privacy Policy</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                                         </li>
                                         <li>
                                             <i class="fa-solid fa-location-dot"></i>
-                                            <a href="https://uac-bd.com/contact-us">ChemiTex BD, UAC Ltd, English Center & Publications Ltd, 3, Arambagh,  Motijheel, Dhaka, Bangladesh</a>
+                                            <a href="#/contact-us">ChemiTex BD, UAC Ltd, English Center & Publications Ltd, 3, Arambagh,  Motijheel, Dhaka, Bangladesh</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -144,7 +144,7 @@
         </div>
         <div class="copy-right-section">
             <div class="container">
-                <p>Copyright © 2026 <span><a href="https://uac-bd.com">UAC</a></span> All rights reserved</p>
+                <p>Copyright © 2026 <span><a href="#">UAC</a></span> All rights reserved</p>
             </div>
         </div>
     </footer>
@@ -270,7 +270,7 @@
 
             function loadAdvices(category, limit, callback) {
                 $.ajax({
-                    url: "https://uac-bd.com/student-advice/fetch",
+                    url: "#/student-advice/fetch",
                     type: "GET",
                     data: { category_slug: category, limit: limit },
                     success: function (response) {
@@ -596,7 +596,7 @@
                     Messenger
                 </a>
                 <!-- 2. Success Stories -->
-                <a href="https://uac-bd.com/success-student-advice" target="_blank" class="bd-nav-btn bd-story">
+                <a href="#/success-student-advice" target="_blank" class="bd-nav-btn bd-story">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <polygon
@@ -606,7 +606,7 @@
                     Success Stories
                 </a>
                 <!-- 3. Free Study Room -->
-                <a href="https://uac-bd.com/free-course" target="_blank" class="bd-nav-btn bd-contact">
+                <a href="#/free-course" target="_blank" class="bd-nav-btn bd-contact">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -615,7 +615,7 @@
                     Free Study Room
                 </a>
                 <!-- 4. Job News -->
-                <a href="https://uac-bd.com/job-circular" target="_blank" class="bd-nav-btn bd-job">
+                <a href="#/job-circular" target="_blank" class="bd-nav-btn bd-job">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>

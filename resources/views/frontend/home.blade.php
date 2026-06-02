@@ -15,191 +15,58 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="freeDropdown"
                             style="max-height: 300px; overflow-y: auto;">
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/IELTS">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  IELTS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/Daily-Exam-Test">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  Daily Exam Test
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/BCS">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  BCS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/PRIMARY">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  PRIMARY
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/NTRCA">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  NTRCA
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/BANK">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  BANK
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/11-20th-Grade">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  11-20th Grade
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/9th-10th-Grade">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  9th-10th Grade
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/RECORDED-COURSES">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  RECORDED COURSES
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/free-exam/Recent-Affairs">
-                                    <i class="fa-solid fa-arrows-turn-right"></i>  Recent Affairs
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                            <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
 
-                    <!-- Course Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="paidDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: 700; color: #89181A;">
-                            Courses
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="paidDropdown"
-                            style="max-height: 300px; overflow-y: auto;">
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/Daily-Exam-Test" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  Daily Exam Test
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/BCS" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  BCS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/PRIMARY" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  PRIMARY
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/NTRCA" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  NTRCA
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/BANK" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  BANK
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/11-20th-Grade" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  11-20th Grade
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/9th-10th-Grade" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  9th-10th Grade
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/category/RECORDED-COURSES" "="">
-                                    <i class=" fa-solid fa-hand-point-right"></i>  RECORDED COURSES
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <!-- School Admission -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="schoolDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                School Admission
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="schoolDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 1-5</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 6</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 7</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 8</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 9</a></li>
+                            </ul>
+                        </li>
 
-                    <!-- Exams Dropdown -->
-                    <li class="nav-item dropdown exam">
-                        <a class="nav-link dropdown-toggle" href="#" id="examDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: 700; color: #89181A;">
-                            Exams
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="examDropdown"
-                            style="max-height: 300px; overflow-y: auto;">
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/exam?BCS">
-                                    <i class="fa-solid fa-share"></i>  BCS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/exam?9th-10th-Grade">
-                                    <i class="fa-solid fa-share"></i>  9th-10th Grade
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/exam?BANK">
-                                    <i class="fa-solid fa-share"></i>  BANK
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/exam?PRIMARY">
-                                    <i class="fa-solid fa-share"></i>  PRIMARY
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/exam?NTRCA">
-                                    <i class="fa-solid fa-share"></i>  NTRCA
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://uac-bd.com/exam?11-20th-Grade">
-                                    <i class="fa-solid fa-share"></i>  11-20th Grade
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <!-- College Admission -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="collegeDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                College Admission
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Science Group</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Business Studies</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Humanities</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> English Version</a></li>
+                            </ul>
+                        </li>
 
-                    <!-- More Dropdown -->
-                    <li class="nav-item dropdown more">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: 700; color: #89181A;">
-                            More
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li>
-                                <a class="dropdown-item " href="https://uac-bd.com/ielts">
-                                    <i class="fa-solid fa-graduation-cap"></i>  IELTS
-                                </a>
-                            </li>
+                        <!-- University Admission -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="universityDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                University Admission
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="universityDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> A Unit (Science)</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> B Unit (Humanities)</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> C Unit (Business Studies)</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> D Unit (Mixed)</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> GST Admission</a></li>
+                            </ul>
+                        </li>
 
-                            <li>
-                                <a class="dropdown-item " href="https://uac-bd.com/blog">
-                                    <i class="fa-solid fa-newspaper"></i>  ব্লগ
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item " href="https://uac-bd.com/all-question-bank">
-                                    <i class="fa-solid fa-clipboard-question"></i>  প্রশ্নব্যাংক
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item " href="https://uac-bd.com/all-products">
-                                    <i class="fa-solid fa-book"></i>  বই
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item " href="https://uac-bd.com/notice">
-                                    <i class="fa-solid fa-bell"></i>  নোটিশ
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item " href="https://uac-bd.com/job-circular">
-                                    <i class="fa-solid fa-briefcase"></i>  চাকরির খবর
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -226,65 +93,65 @@
            padding-top: 0 !important;
            padding-bottom: 0 !important;">
             <div class="home-2nd-add-image">
-                <a href="https://uac-bd.com/instructor"><img src="{{asset('frontEnd/images/home-page-bn-2-v13-eid-v2.png')}}"
+                <a href="#/instructor"><img src="{{asset('frontEnd/images/home-page-bn-2-v13-eid-v2.png')}}"
                         alt="Home 2nd Add Banner" srcset="" loading="lazy"></a>
             </div>
         </div>
         <div class="col-lg-3" style="padding: 0 !important;">
             <div class="home-3rd-add-image dropdown">
-                <a href="https://uac-bd.com/free-course" class="dropdown-toggle" id="home3rdAddDropdown"
+                <a href="#/free-course" class="dropdown-toggle" id="home3rdAddDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{asset('frontEnd/images/home-page-bn-3-v13-eid.webp')}}" alt="Home 3rd Add Banner" loading="lazy" srcset="">
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="home3rdAddDropdown"
                     style="max-height: 400px; overflow-y: auto;">
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/IELTS">
+                        <a class="dropdown-item" href="#/free-exam/IELTS">
                             <i class="fa-solid fa-arrows-turn-right"></i>  IELTS
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/Daily-Exam-Test">
+                        <a class="dropdown-item" href="#/free-exam/Daily-Exam-Test">
                             <i class="fa-solid fa-arrows-turn-right"></i>  Daily Exam Test
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/BCS">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  BCS
+                        <a class="dropdown-item" href="#/free-exam/BCS">
+                            <i class="fa-solid fa-arrows-turn-right"></i>  SSC
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/PRIMARY">
+                        <a class="dropdown-item" href="#/free-exam/PRIMARY">
                             <i class="fa-solid fa-arrows-turn-right"></i>  PRIMARY
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/NTRCA">
+                        <a class="dropdown-item" href="#/free-exam/NTRCA">
                             <i class="fa-solid fa-arrows-turn-right"></i>  NTRCA
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/BANK">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  BANK
+                        <a class="dropdown-item" href="#/free-exam/BANK">
+                            <i class="fa-solid fa-arrows-turn-right"></i>  HSC
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/11-20th-Grade">
+                        <a class="dropdown-item" href="#/free-exam/11-20th-Grade">
                             <i class="fa-solid fa-arrows-turn-right"></i>  11-20th Grade
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/9th-10th-Grade">
+                        <a class="dropdown-item" href="#/free-exam/9th-10th-Grade">
                             <i class="fa-solid fa-arrows-turn-right"></i>  9th-10th Grade
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/RECORDED-COURSES">
+                        <a class="dropdown-item" href="#/free-exam/RECORDED-COURSES">
                             <i class="fa-solid fa-arrows-turn-right"></i>  RECORDED COURSES
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="https://uac-bd.com/free-exam/Recent-Affairs">
+                        <a class="dropdown-item" href="#/free-exam/Recent-Affairs">
                             <i class="fa-solid fa-arrows-turn-right"></i>  Recent Affairs
                         </a>
                     </li>
@@ -304,7 +171,7 @@
 
                 <div class="d-flex justify-content-center flex-wrap">
                     <div class="course-box" style="flex: 1 1 100%;">
-                        <a href="https://uac-bd.com/daily-contents">
+                        <a href="#/daily-contents">
                             <img src="{{asset('frontEnd/images/daily_update-small-devices.png')}}" alt="" loading="lazy" srcset="">
                             <p style="color: white;">Daily Updates</p>
                         </a>
@@ -313,13 +180,13 @@
 
                 <div class="course-section d-flex justify-content-around flex-wrap" style="gap: 5px;">
                     <div class="course-box" style="flex: 1 1 auto;">
-                        <a href="https://uac-bd.com/free-course">
+                        <a href="#/free-course">
                             <img src="{{asset('frontEnd/images/hscbag_1732778180651.png')}}" alt="" loading="lazy" srcset="">
                             <p style="color: white;">Free StudyRoom</p>
                         </a>
                     </div>
                     <div class="course-box" style="flex: 1 1 auto;">
-                        <a href="https://uac-bd.com/course">
+                        <a href="#/course">
                             <img src="{{asset('images/ssc_1732778162589.png')}}" alt="" loading="lazy" srcset="">
                             <p style="color: white;">Premium Course</p>
                         </a>
@@ -397,33 +264,33 @@
                 </div>
 
                 <div class="emergency-course-section d-flex justify-content-around flex-wrap">
-                    <a href="https://uac-bd.com/free-course" class="emergency-box">
+                    <a href="#/free-course" class="emergency-box">
                         <img src="{{asset('frontEnd/images/free-staudy-room.webp')}}" alt="Free Studyroom" class="img-fluid">
                         <p class="pointer-cursor text-center text-uppercase">Free Studyroom</p>
                     </a>
 
-                    <a href="https://uac-bd.com/guideline" class="emergency-box">
-                        <img src="{{asset('frontEnd/images/all-job-guidelines-techniques.webp')}}" alt="All Job Guidelines & Techniques"
+                    <a href="#/guideline" class="emergency-box">
+                        <img src="{{asset('frontEnd/images/all-job-guidelines-techniques.webp')}}" alt="All Live Class & Techniques"
                             class="img-fluid">
-                        <p class="pointer-cursor text-center text-uppercase">Job Guidelines</p>
+                        <p class="pointer-cursor text-center text-uppercase">Live Class</p>
                     </a>
 
-                    <a href="https://uac-bd.com/with-mukul-sir" class="emergency-box">
+                    <a href="#/with-mukul-sir" class="emergency-box">
                         <img src="{{asset('frontEnd/images/ZahanSir.png')}}" alt="Mukul Sir এর সাথে" class="img-fluid">
                         <p class="pointer-cursor text-center">Zahan Sir এর সাথে</p>
                     </a>
 
-                    <a href="https://uac-bd.com/leaderboard" class="emergency-box">
+                    <a href="#/leaderboard" class="emergency-box">
                         <img src="{{asset('frontEnd/images/leader-board.webp')}}" alt="Leader Board" class="img-fluid">
                         <p class="pointer-cursor text-center text-uppercase">Leader Board</p>
                     </a>
 
-                    <a href="https://uac-bd.com/students-review" class="emergency-box">
+                    <a href="#/students-review" class="emergency-box">
                         <img src="{{asset('frontEnd/images/students-review.webp')}}" alt="Students Review" class="img-fluid">
                         <p class="pointer-cursor text-center text-uppercase">Students Review</p>
                     </a>
 
-                    <a href="https://uac-bd.com/faq" class="emergency-box">
+                    <a href="#/faq" class="emergency-box">
                         <img src="{{asset('frontEnd/images/faq.webp')}}" alt="আপনার জিজ্ঞাসা / FAQ" class="img-fluid">
                         <p class="pointer-cursor text-center text-uppercase">আপনার জিজ্ঞাসা / FAQ</p>
                     </a>
@@ -445,54 +312,54 @@
                 <div class="home-services-area">
                     <div class="row" style="--bs-gutter-x: 0.3rem; !important;">
                         <div class="col-md-3 col-6 mb-1 dropdown bcs-jobs" id="home-services-area-one">
-                            <a href="https://uac-bd.com/course">
+                            <a href="#/course">
                                 <div class="my-home-service premium-course-box">
                                     <div class="my-home-service-icon">
                                         <img src="{{asset('frontEnd/images/bcs-job-v5.png')}}" alt="" loading="lazy">
                                     </div>
                                     <div class="my-home-service-content">
-                                        <h3>JOB COURSES</h3>
+                                        <h3>OUR CLASS</h3>
                                     </div>
                                 </div>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/Daily-Exam-Test">
+                                    <a class="dropdown-item" href="#/category/Daily-Exam-Test">
                                         <i class="fa-solid fa-hand-point-right"></i>  Daily Exam Test
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/BCS">
-                                        <i class="fa-solid fa-hand-point-right"></i>  BCS
+                                    <a class="dropdown-item" href="#/category/BCS">
+                                        <i class="fa-solid fa-hand-point-right"></i>  SSC
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/PRIMARY">
+                                    <a class="dropdown-item" href="#/category/PRIMARY">
                                         <i class="fa-solid fa-hand-point-right"></i>  PRIMARY
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/NTRCA">
+                                    <a class="dropdown-item" href="#/category/NTRCA">
                                         <i class="fa-solid fa-hand-point-right"></i>  NTRCA
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/BANK">
-                                        <i class="fa-solid fa-hand-point-right"></i>  BANK
+                                    <a class="dropdown-item" href="#/category/BANK">
+                                        <i class="fa-solid fa-hand-point-right"></i>  HSC
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/11-20th-Grade">
+                                    <a class="dropdown-item" href="#/category/11-20th-Grade">
                                         <i class="fa-solid fa-hand-point-right"></i>  11-20th Grade
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/9th-10th-Grade">
+                                    <a class="dropdown-item" href="#/category/9th-10th-Grade">
                                         <i class="fa-solid fa-hand-point-right"></i>  9th-10th Grade
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="https://uac-bd.com/category/RECORDED-COURSES">
+                                    <a class="dropdown-item" href="#/category/RECORDED-COURSES">
                                         <i class="fa-solid fa-hand-point-right"></i>  RECORDED COURSES
                                     </a>
                                 </li>
@@ -500,7 +367,7 @@
                         </div>
                         <div class="col-md-3 col-6 mb-1" id="home-services-area-two" data-toggle="tooltip"
                             data-placement="bottom" title="Tooltip on bottom">
-                            <a href="https://uac-bd.com/exam">
+                            <a href="#/exam">
                                 <div class="my-home-service premium-course-box" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom"
                                     data-bs-title="পরীক্ষা হলো শিক্ষার্থীদের জ্ঞান, দক্ষতা এবং শেখার অগ্রগতি মূল্যায়ন করার একটি প্রক্রিয়া। এটি শিক্ষাপ্রতিষ্ঠানে সাধারণত নির্দিষ্ট সময় পর অনুষ্ঠিত হয়।">
@@ -522,13 +389,13 @@
                                         <img src="{{asset('frontEnd/images/next-page-v5.png')}}" alt="" loading="lazy">
                                     </div>
                                     <div class="my-home-service-content">
-                                        <h3>চাকরি প্রস্তুতির যত বই</h3>
+                                        <h3>Admission Test</h3>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-3 col-6 mb-1" id="home-services-area-four">
-                            <a href="https://uac-bd.com/ielts" target="_blank">
+                            <a href="#/ielts" target="_blank">
                                 <div class="my-home-service premium-course-box" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom" data-bs-title="">
                                     <div class="my-home-service-icon">
@@ -559,118 +426,109 @@
                 <div class="home-category-area mt-5">
                     <div class="row justify-content-center">
 
-                        <div class="home-category-item" id="category-item-214">
-
-                            <a href="https://uac-bd.com/category/Daily-Exam-Test">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>Daily Exam Test </h3>
-
-                                    </div>
+                       <div class="home-category-item" id="category-item-214">
+                        <a href="#/category/Daily-Exam-Test">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-1">
-
-                            <a href="https://uac-bd.com/category/BCS">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>BCS </h3>
-
-                                    </div>
+                                <div class="my-course-category-content">
+                                    <h3>School Admission</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-50">
+                            </div>
+                        </a>
+                    </div>
 
-                            <a href="https://uac-bd.com/category/PRIMARY">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>PRIMARY </h3>
-
-                                    </div>
+                    <div class="home-category-item" id="category-item-1">
+                        <a href="#/category/BCS">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-163">
-
-                            <a href="https://uac-bd.com/category/NTRCA">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>NTRCA </h3>
-
-                                    </div>
+                                <div class="my-course-category-content">
+                                    <h3>A Unit (Science)</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-52">
+                            </div>
+                        </a>
+                    </div>
 
-                            <a href="https://uac-bd.com/category/BANK">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>BANK </h3>
-
-                                    </div>
+                    <div class="home-category-item" id="category-item-50">
+                        <a href="#/category/PRIMARY">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-86">
-
-                            <a href="https://uac-bd.com/category/11-20th-Grade">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>11-20th Grade </h3>
-
-                                    </div>
+                                <div class="my-course-category-content">
+                                    <h3>B Unit (Humanities)</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-91">
+                            </div>
+                        </a>
+                    </div>
 
-                            <a href="https://uac-bd.com/category/9th-10th-Grade">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>9th-10th Grade </h3>
-
-                                    </div>
+                    <div class="home-category-item" id="category-item-163">
+                        <a href="#/category/NTRCA">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="home-category-item" id="category-item-185">
-
-                            <a href="https://uac-bd.com/category/RECORDED-COURSES">
-                                <div class="my-course-category">
-                                    <div class="my-course-category-icon">
-                                        <i class="fa-solid fa-book"></i>
-                                    </div>
-                                    <div class="my-course-category-content">
-                                        <h3>RECORDED COURSES </h3>
-
-                                    </div>
+                                <div class="my-course-category-content">
+                                    <h3>C Unit (Business)</h3>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="home-category-item" id="category-item-52">
+                        <a href="#/category/BANK">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="my-course-category-content">
+                                    <h3>D Unit (Mixed)</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="home-category-item" id="category-item-86">
+                        <a href="#/category/11-20th-Grade">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="my-course-category-content">
+                                    <h3>GST Admission</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="home-category-item" id="category-item-91">
+                        <a href="#/category/9th-10th-Grade">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="my-course-category-content">
+                                    <h3>College Admission</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="home-category-item" id="category-item-185">
+                        <a href="#/category/RECORDED-COURSES">
+                            <div class="my-course-category">
+                                <div class="my-course-category-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="my-course-category-content">
+                                    <h3>Medical Admission</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
                     </div>
                 </div>
