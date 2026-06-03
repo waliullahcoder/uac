@@ -80,7 +80,7 @@
         }
 
          .text-content {
-            background-image: url('images/popup-text-bg-img.avif');
+            background-image: url('frontEnd/images/popup-text-bg-img.avif');
             background-size: cover;
             /* Ensures the image covers the entire element */
             background-position: center;
@@ -358,7 +358,7 @@
         }
 
           #Home_main_banner {
-            background-image: url("images/Background-banner-v5-eid.webp");
+            background-image: url("frontEnd/images/Background-banner-v5-eid.webp");
             background-size: cover;
             /* Ensures the background covers the entire section */
             background-position: center;
@@ -374,7 +374,7 @@
         /* Adjustments for Tablets */
         @media (max-width: 1440px) {
             #Home_main_banner {
-                background-image: url("https://biddabari.com/frontend/assets/images/home-page/Background-banner-v2.webp");
+                background-image: url("https://biddabari.com/frontend/assets/frontEnd/images/home-page/Background-banner-v2.webp");
                 background-size: cover;
                 /* Maintains a good aspect ratio */
                 min-height: 250px;
@@ -494,7 +494,7 @@
 
            .horizontal_video_slider {
             background-color: #ccc;
-            background-image: url(images/mh6hpcqrlb4ts68ia1gg.jpg);
+            background-image: url(frontEnd/images/mh6hpcqrlb4ts68ia1gg.jpg);
             background-repeat: repeat-x;
             background-size: cover;
             padding: 38px 64px;
@@ -2713,12 +2713,10 @@
         #bd-file {
             display: none;
         }
-.row{
-    margin-top:45px !important;
-}
-.py-5{
-     padding-top:0px !important;
-}
+
+/* .py-5{
+     padding-top:10px !important;
+} */
 
 .alert-dismissible .btn-close{
     top:12px !important;

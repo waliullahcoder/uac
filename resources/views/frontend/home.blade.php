@@ -11,7 +11,7 @@
 
 
 
-    <section class="row" id="Home_add">
+    <section class="row" id="Home_add" style="margin-top:10px;">
         <div class="col-lg-2" style="padding: calc(var(--bs-gutter-x)* .0); !important;">
             <div class="home-1st-add-image">
                 <a href="https://play.google.com/store/apps/details?id=com.nextive.uac-bd.021" target="_blank"><img
@@ -90,9 +90,321 @@
             </div>
         </div>
     </section>
-
+ 
     <main>
-        
+       
+         <section id="Home_main_banner" class="background-res background-ats py-3 py-lg-5 d-none d-lg-block" style="background-image: url('frontEnd/images/Background-banner-v5-eid.webp')">
+            <div class="container-fluid">
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-12">
+                        
+                    </div>
+                    <div class="col-lg-9 col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-8">
+                                <div class="home-1st-slide">
+                                    <div class="variable-width">
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/Union_Social_Worker_Bullet_Batch">
+                                                            <img src="{{asset('frontEnd/images/courses-1779692952-65608975863965.webp')}}" alt="ইউনিয়ন সমাজকর্মী বুলেট ব্যাচ" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/Union_Social_Worker_Bullet_Batch">ইউনিয়ন সমাজকর্মী বুলেট ব্যাচ</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/Union_Social_Worker_Bullet_Batch" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/19th-NTRCA-Preli-Challenge-Live-Batch-4">
+                                                            <img src="{{asset('frontEnd/images/courses-1779454161-580302728296401.webp')}}" alt="19th NTRCA Preli. Challenge Live Batch-4" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/19th-NTRCA-Preli-Challenge-Live-Batch-4">19th NTRCA Preli. Challenge Live Batch-4</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/19th-NTRCA-Preli-Challenge-Live-Batch-4" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/11-20th-Grade-Diamond-Live-Batch-9">
+                                                            <img src="{{asset('frontEnd/images/courses-1779453493-505686576858688.webp')}}" alt="11-20th Grade Diamond Live Batch-9" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/11-20th-Grade-Diamond-Live-Batch-9">11-20th Grade Diamond Live Batch-9</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/11-20th-Grade-Diamond-Live-Batch-9" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/51st-BCS-Advance-Gold-Live-Batch-2">
+                                                            <img src="{{asset('frontEnd/images/courses-1779450757-566005773092923.webp')}}" alt="51st BCS Advance Gold Live Batch-2" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/51st-BCS-Advance-Gold-Live-Batch-2">51st BCS Advance Gold Live Batch-2</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/51st-BCS-Advance-Gold-Live-Batch-2" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/52nd-BCS-Foundation-To-Advance-Live-Batch-6">
+                                                            <img src="{{asset('frontEnd/images/courses-1779451006-176029380610072.webp')}}" alt="52nd BCS Foundation To Advance Live Batch-6" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/52nd-BCS-Foundation-To-Advance-Live-Batch-6">52nd BCS Foundation To Advance Live Batc...</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/52nd-BCS-Foundation-To-Advance-Live-Batch-6" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/Primary-Pro-Advance-Live-Batch-2">
+                                                            <img src="{{asset('frontEnd/images/courses-1779452012-793114980758228.webp')}}" alt="Primary Pro Advance Live Batch-2" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/Primary-Pro-Advance-Live-Batch-2">Primary Pro Advance Live Batch-2</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/Primary-Pro-Advance-Live-Batch-2" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/Bank-Job-Combined-Gold-Live-Batch-9">
+                                                            <img src="{{asset('frontEnd/images/courses-1779451788-404362973793326.webp')}}" alt="Bank Job Combined Gold Live Batch-9" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/Bank-Job-Combined-Gold-Live-Batch-9">Bank Job Combined Gold Live Batch-9</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/Bank-Job-Combined-Gold-Live-Batch-9" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="hero-slide">
+                                                <div class="exam-package-area">
+                                                    <div class="package-exam-image">
+                                                        <a href="https://biddabari.com/details/BANGLADESH-BANK-AD-Target-Combined-Live-Batch-2">
+                                                            <img src="{{asset('frontEnd/images/courses-1779454811-74587594264805.webp')}}" alt="BANGLADESH BANK (AD) Target Combined Live Batch-2" loading="lazy" srcset="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="package-exam-content" id="custom-package-exam-content">
+                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
+                                                            <h2><a href="https://biddabari.com/details/BANGLADESH-BANK-AD-Target-Combined-Live-Batch-2">BANGLADESH BANK (AD) Target Combined Liv...</a>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="row gy-2 button-and-price">
+                                                            <div class="col-12">
+                                                                <div class="package-exam-rating">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <a href="https://biddabari.com/details/BANGLADESH-BANK-AD-Target-Combined-Live-Batch-2" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="main-banner-video">
+                                    <div class="ratio ratio-16x9" style="width: 100%; height: 0; padding-bottom: 49.25%;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="ডেইলি আপডেট হলো প্রতিদিনের তথ্য বা সংবাদ যা একটি নির্দিষ্ট ক্ষেত্র বা বিষয়কে কেন্দ্র করে সবার কাছে পৌঁছানোর জন্য তৈরি করা হয়। এটি সাধারণত সংবাদ, পণ্য বা সেবা সম্পর্কিত খবর, নতুন কিছু শিখতে বা জানার জন্য তথ্য প্রদান করে।">
+                                        <a href="https://biddabari.com/daily-contents">
+                                            <img class="img img-thumbnail-custom lazyload" src="{{asset('frontEnd/images/daily_update-v2-eid.webp')}}" alt="Daily Update Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" id="main-banner-video-banner" srcset="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="home-video-feature-area mt-2">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="home-feature-video">
+                                                <div class="ratio ratio-1x1" style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
+                                                    <img class="img img-thumbnail-custom lazyload" src="{{asset('frontEnd/images/recent-job-solution-v1-eid.webp')}}" alt="Recent Job Solution Banner" style="position: absolute; top: 9%; left: 0; width: 100%; height: 76%;" srcset="">
+                                                    <!-- Transparent overlay to trigger the click event -->
+                                                    <div onclick="showVideoModal('https://www.youtube.com/embed/87jPFaOpFrk?autoplay=1')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="home-feature-video">
+                                                <div class="ratio ratio-1x1" style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
+                                                    <img class="img img-thumbnail-custom lazyload" src="{{asset('frontEnd/images/teacher-trip-advice-v1-eid.webp')}}" alt="Teachers Tips & Advice Banner" style="position: absolute; top: 9%; left: 0; width: 100%; height: 76%;" srcset="">
+                                                    <!-- Transparent overlay to trigger the click event -->
+                                                    <div onclick="showVideoModal('https://www.youtube.com/embed/_UgDurRDFew?autoplay=1')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="home-feature-video">
+                                                <div class="ratio ratio-1x1" style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
+                                                    <img class="img img-thumbnail-custom lazyload" src="{{asset('frontEnd/images/app-website-use-rules-v2-eid.webp')}}" alt="APP Website Uses Rules Banner" style="position: absolute; top: 9%; left: 0; width: 100%; height: 76%;" srcset="">
+                                                    <!-- Transparent overlay to trigger the click event -->
+                                                    <div onclick="showVideoModal('https://www.youtube.com/embed/bwGq8IHxRxI?autoplay=1')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
 
         <section id="Home_main_banner" class="background-res background-ats py-3 py-lg-5 d-lg-none"
             style="background-image: url('frontEnd/images/Background-banner-v5-eid.webp')">
@@ -118,7 +430,7 @@
                     </div>
                     <div class="course-box" style="flex: 1 1 auto;">
                         <a href="#/course">
-                            <img src="{{asset('images/ssc_1732778162589.png')}}" alt="" loading="lazy" srcset="">
+                            <img src="{{asset('frontEnd/images/ssc_1732778162589.png')}}" alt="" loading="lazy" srcset="">
                             <p style="color: white;">Premium Course</p>
                         </a>
                     </div>
@@ -131,7 +443,7 @@
                                     <div class="ratio ratio-1x1"
                                         style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
                                         <img class="img img-thumbnail-custom lazyload"
-                                            src="{{asset('images/recent-job-solution-v1-eid.webp')}}"
+                                            src="{{asset('frontEnd/images/recent-job-solution-v1-eid.webp')}}"
                                             alt="Recent Job Solution Banner"
                                             style="position: absolute; top: 12%; left: 0; width: 100%; height: 76%;"
                                             srcset="">
@@ -147,7 +459,7 @@
                                     <div class="ratio ratio-1x1"
                                         style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
                                         <img class="img img-thumbnail-custom lazyload"
-                                            src="{{asset('images/teacher-trip-advice-v1-eid.webp')}}"
+                                            src="{{asset('frontEnd/images/teacher-trip-advice-v1-eid.webp')}}"
                                             alt="Teachers Tips & Advice Banner"
                                             style="position: absolute; top: 12%; left: 0; width: 100%; height: 76%;"
                                             srcset="">
@@ -163,7 +475,7 @@
                                     <div class="ratio ratio-1x1"
                                         style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
                                         <img class="img img-thumbnail-custom lazyload"
-                                            src="{{asset('images/app-website-use-rules-v2-eid.webp')}}"
+                                            src="{{asset('frontEnd/images/app-website-use-rules-v2-eid.webp')}}"
                                             alt="APP Website Uses Rules Banner"
                                             style="position: absolute; top: 12%; left: 0; width: 100%; height: 76%;"
                                             srcset="">
