@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="mobile-menu d-flex justify-content-between align-items-center">
                     <div class="main-logo">
-                        <a href="{{url('/')}}"><img src="{{ asset(file_exists($settings->logo) ? $settings->logo : 'frontend/images/logo/favicon.png') }}" alt="Logo"
+                        <a href="{{url('/')}}"><img src="{{ asset(file_exists($settings->logo) ? $settings->logo : 'frontend/images/logo_jpg1.jpg') }}" alt="Logo"
                                 srcset=""></a>
                     </div>
 
