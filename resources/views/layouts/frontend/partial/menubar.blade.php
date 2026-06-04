@@ -19,56 +19,56 @@
                             </form>
                         </div>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
+                            <a class="nav-link active" href="{{route('auth.signupPage')}}">Home</a>
                         </li>
 
                         <!-- School Admission -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="schoolDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="{{route('auth.signupPage')}}" id="schoolDropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 School Admission
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="schoolDropdown">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 1-5</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 6</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 7</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 8</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 9</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 1-5</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 6</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 7</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 8</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 9</a></li>
                             </ul>
                         </li>
 
                         <!-- College Admission -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="collegeDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="{{route('auth.signupPage')}}" id="collegeDropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 College Admission
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Science Group</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Business Studies</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> Humanities</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-book"></i> English Version</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> Science Group</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> Business Studies</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> Humanities</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> English Version</a></li>
                             </ul>
                         </li>
 
                         <!-- University Admission -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="universityDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="{{route('auth.signupPage')}}" id="universityDropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 University Admission
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="universityDropdown">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> A Unit (Science)</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> B Unit (Humanities)</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> C Unit (Business Studies)</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> D Unit (Mixed)</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right"></i> GST Admission</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> A Unit (Science)</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> B Unit (Humanities)</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> C Unit (Business Studies)</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> D Unit (Mixed)</a></li>
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> GST Admission</a></li>
                             </ul>
                         </li>
 
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="{{route('auth.signupPage')}}">Contact</a>
                         </li>
 
                        
