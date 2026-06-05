@@ -57,7 +57,7 @@
                     <div class="footer-logo-content mb-lg-5">
                         <div class="footer-logo">
                             <div class="footer-logo-image">
-                                <img src="{{asset('frontEnd/images/logo_jpg.jpg')}}" alt="" srcset="">
+                                <img src="{{asset('frontend/images/logo_jpg.jpg')}}" alt="" srcset="">
                             </div>
                         </div>
                         <div class="footer-logo-text">
@@ -138,7 +138,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-12">
-                <img class="img-fluid" src="{{asset('frontEnd/images/SSL.webp')}}" alt="SSL Image" srcset="">
+                <img class="img-fluid" src="{{asset('frontend/images/SSL.webp')}}" alt="SSL Image" srcset="">
             </div>
             <br>
         </div>

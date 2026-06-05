@@ -21,48 +21,49 @@
                             <!-- BASIC INFO -->
                             <div class="row g-3">
 
-                                <div class="col-md-4">
-                                    <label class="form-label">Admission Date</label>
+                                <div class="col-md-6">
+                                    <label class="form-label btn btn_warning">Admission Date</label>
                                     <input type="text" name="admission_date" class="form-control"
                                            value="{{ date('d-m-Y') }}" readonly>
                                 </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Full Name</label>
-                                    <input type="text" name="name" class="form-control">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Mother's Name</label>
-                                    <input type="text" name="mother_name" class="form-control">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Father's Name</label>
-                                    <input type="text" name="father_name" class="form-control">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Phone (Login ID)</label>
-                                    <input type="text" name="phone" class="form-control">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label class="form-label">Date of Birth</label>
-                                    <input type="date" name="date_of_birth" class="form-control">
-                                </div>
-
                                 <!-- VERSION -->
-                                <div class="col-md-4">
-                                    <label class="form-label">Version</label>
+                                <div class="col-md-6">
+                                    <label class="form-label btn btn_warning">Version</label>
                                     <select name="version" class="form-select">
                                         <option value="English">English</option>
                                         <option value="Bangla">Bangla</option>
                                     </select>
                                 </div>
 
+                                <div class="col-md-12">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Mother's Name</label>
+                                    <input type="text" name="mother_name" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Father's Name</label>
+                                    <input type="text" name="father_name" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone (Login ID)</label>
+                                    <input type="text" name="phone" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" name="date_of_birth" class="form-control">
+                                </div>
+
+                                
+
                                 <!-- BLOOD -->
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="display:none">
                                     <label class="form-label">Blood Group</label>
                                     <select name="blood_group" class="form-select">
                                         <option>A+</option><option>A-</option>
@@ -109,32 +110,33 @@
                                     </select>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-8">
                                     <label>Institution</label>
                                     <input type="text" name="institution" class="form-control">
                                 </div>
-
-                                <div class="col-md-4">
-                                    <label>Board</label>
-                                    <input type="text" name="board" class="form-control">
-                                </div>
-
                                 <div class="col-md-4">
                                     <label>Year</label>
                                     <input type="text" name="year" class="form-control">
                                 </div>
 
-                                <div class="col-md-4">
+
+                                <div class="col-md-8">
+                                    <label>Board</label>
+                                    <input type="text" name="board" class="form-control">
+                                </div>
+
+                                
+                                <div class="col-md-4" style="display:none">
                                     <label>Grade</label>
                                     <input type="text" name="grade" class="form-control">
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="display:none">
                                     <label>GPA (With 4th)</label>
                                     <input type="text" name="gpa_with_4th" class="form-control">
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="display:none">
                                     <label>GPA (Without 4th)</label>
                                     <input type="text" name="gpa_without_4th" class="form-control">
                                 </div>
