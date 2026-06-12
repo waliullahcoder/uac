@@ -655,7 +655,9 @@
             </div>
         </section>
 
-        <section id="Home_Our_courses">
+      
+
+           <section id="Home_Our_courses">
             <div class="container">
                 <div class="row mb-5">
                     <div class="title-area text-center">
@@ -668,122 +670,185 @@
                 </div>
                 <div class="home-category-area mt-5">
                     <div class="row justify-content-center">
+                    @foreach($categories as $category)
+                        <div class="home-category-item" id="category-item-214">
 
-                       <div class="home-category-item" id="category-item-214">
-                        <a href="#/category/Daily-Exam-Test">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>School Admission</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            <a href="#">
+                                <div class="my-course-category">
+                                    <div class="my-course-category-icon">
+                                        <i class="fa-solid fa-book"></i>
+                                    </div>
+                                    <div class="my-course-category-content">
+                                        <h3>{{$category->name}}</h3>
 
-                    <div class="home-category-item" id="category-item-1">
-                        <a href="#/category/BCS">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
+                                    </div>
                                 </div>
-                                <div class="my-course-category-content">
-                                    <h3>A Unit (Science)</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="home-category-item" id="category-item-50">
-                        <a href="#/category/PRIMARY">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>B Unit (Humanities)</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="home-category-item" id="category-item-163">
-                        <a href="#/category/NTRCA">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>C Unit (Business)</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="home-category-item" id="category-item-52">
-                        <a href="#/category/BANK">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>D Unit (Mixed)</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="home-category-item" id="category-item-86">
-                        <a href="#/category/11-20th-Grade">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>GST Admission</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="home-category-item" id="category-item-91">
-                        <a href="#/category/9th-10th-Grade">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>College Admission</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="home-category-item" id="category-item-185">
-                        <a href="#/category/RECORDED-COURSES">
-                            <div class="my-course-category">
-                                <div class="my-course-category-icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="my-course-category-content">
-                                    <h3>Medical Admission</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
+                            </a>
+                        </div>
+                    @endforeach
                     </div>
                 </div>
                 
+                <div class="all-courses-area">
+                    <div class="row g-2 g-md-3 g-lg-4">
+                        @foreach($products as $product)
+                        <div class="col-6 col-lg-3 mt-4">
+                            <div class="exam-package-area">
+                                <div class="package-exam-image">
+                                    <a href="{{route('product.details',$product->id)}}"><img
+                                            src="{{asset($product->thumbnail)}}" alt=""
+                                            loading="lazy"></a>
+                                </div>
+                                <div class="package-exam-content mx-2 mx-lg-3">
+                                    <div class="package-exam-title pt-3">
+                                        <h2>
+                                            <a href="#">{{$product->name}}</a>
+                                        </h2>
+                                    </div>
+                                    <div class="row button-and-price pb-3 pb-lg-4">
+                                        <div class="col">
+                                            <div class="package-exam-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+
+
+
+                                            <div class="package-exam-price">
+
+                                                <div class="package-exam-total-price text-muted">
+                                                    <s class="text-muted">৳ {{$product->regular_price}}</s>
+                                                </div>
+                                                <div class="package-exam-discount-price">৳ {{$product->sale_price}}</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col text-end">
+                                            <div class="package-exam-button">
+                                                <div class="package-exam-details">
+                                                    <a
+                                                        href="{{route('product.details',$product->id)}}">View
+                                                        Details </a>
+                                                </div>
+                                                <a
+                                                    href="{{route('auth.signupPage')}}">
+                                                    <div class="custom-btn btn-12">
+                                                        <span>ক্লিক করুন!</span><span>কোর্সটি কিনুন</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+
+                  
+                </div>
             </div>
         </section>
+
+ <section class="testimonials-section">
+            <div class="container-fluid px-0">
+                <!-- Stars row -->
+                <div class="stars-row fade-up">
+                    <svg width="22" height="22" viewBox="0 0 24 24">
+                        <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                        </path>
+                    </svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24">
+                        <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                        </path>
+                    </svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24">
+                        <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                        </path>
+                    </svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24">
+                        <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                        </path>
+                    </svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24">
+                        <path
+                            d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
+                        </path>
+                    </svg>
+                </div>
+
+                <h2 class="section-heading fade-up d1 px-3">
+                   কেন কলেজ ভর্তি কোচিংয়ে UAC ই সেরা?
+                </h2>
+
+
+                <div class="marquee-outer fade-up d2">
+                    <div class="marquee-track" id="vidTrack" style="animation-play-state: paused;">
+                          @foreach($categories as $category)
+                        <div class="vid-card" data-video-id="{{$category->url}}">
+                            <div class="vid-thumb" onclick="playInlineVideo(this, '{{$category->url}}')">
+                                <img src="{{asset($category->image)}}" alt="{{$category->name}}" loading="lazy">
+                                <iframe class="inline-video-frame" src="" allowfullscreen=""
+                                    allow="autoplay; encrypted-media"
+                                    style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:20px;"></iframe>
+                                <div class="play-btn">
+                                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                                        <circle cx="26" cy="26" r="26" fill="rgba(137,24,26)"></circle>
+                                        <polygon points="21,17 38,26 21,35" fill="white"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card-person">
+                                <div class="person-avatar">
+                                    <img src="{{asset($category->image)}}" alt="{{$category->name}}">
+                                </div>
+                                <div>
+                                    <div class="person-name">{{$category->name}}</div>
+                                    <div class="person-loc">Video Gallery</div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        
+                    </div>
+                </div>
+
+             
+
+            </div>
+
+            <!-- Video modal -->
+            <div class="yt-overlay" id="ytModal" onclick="closeVideoModal(event)">
+                <div class="yt-box">
+                    <button class="yt-x" onclick="closeVideoModal(null,true)">✕</button>
+                    <div class="yt-ratio"><iframe id="ytFrame" src="" allowfullscreen=""
+                            allow="autoplay; encrypted-media"></iframe></div>
+                </div>
+            </div>
+
+            <!-- Text modal -->
+            <div class="txt-overlay" id="txtModal" onclick="closeTxtModal(event)">
+                <div class="txt-box" onclick="event.stopPropagation()">
+                    <button class="txt-x" onclick="closeTxtModal(null,true)">✕</button>
+                    <p class="txt-body" id="txtBody"></p>
+                    <div class="card-person" id="txtPerson"></div>
+                </div>
+            </div>
+        </section>
+
 
       
 
     </main>
     <!-- Modal -->
-    <div class="modal fade" id="popupModal" data-bs-backdrop="static" data-modal-parent="courseContentModal">
+    <!-- <div class="modal fade" id="popupModal" data-bs-backdrop="static" data-modal-parent="courseContentModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -797,7 +862,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     

@@ -16,11 +16,7 @@
                 <div class="modal-body">
                      @php
                      $categories = \App\Models\Category::with(['children'])
-                                        ->whereNull('parent_id')
-                                        ->whereIn('position', ['mega_menu_parent', 'header', 'homepage'])
-                                        ->where('status', 1)
-                                        ->orderBy('name', 'asc')
-                                        ->get();
+                                        ->whereNull('parent_id')->get();
                                 @endphp
                      <div class="col-12">
                             <label for="parent_id" class="form-label">Parent Category:</label>

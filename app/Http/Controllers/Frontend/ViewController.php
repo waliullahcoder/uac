@@ -44,11 +44,14 @@ class ViewController extends Controller
         $get_sub_category_others_only = $this->frontEndService->getSubCategoryOthersOnly();
         //ব্র্যান্ডসমূহ
         $get_sub_category_brand_only = $this->frontEndService->getSubCategoryBrandOnly();
+
+        $products=Product::get();
  
 
         $homeSections = HomeSection::orderBy('serial', 'asc')->get();
         return view('frontend.home', compact(
             'slides', 
+            'products',
             'homeSections',
             'menus',
             'get_sub_categories_all',
@@ -342,13 +345,18 @@ class ViewController extends Controller
     }
 
     
+    // public function productDetails($id)
+    // {
+    //     $menus = $this->frontEndService->getMenu();
+    //     $product = $this->frontEndService->productDetails($id);
+    //     $relatedProducts = $this->frontEndService->productAll();
+    //     $review_count=Review::where('product_id', $id)->where('user_id',Auth::id())->count();
+    //     return view('frontend.products.productDetails', compact('product','menus','relatedProducts','review_count'));
+    // }
     public function productDetails($id)
     {
-        $menus = $this->frontEndService->getMenu();
         $product = $this->frontEndService->productDetails($id);
-        $relatedProducts = $this->frontEndService->productAll();
-        $review_count=Review::where('product_id', $id)->where('user_id',Auth::id())->count();
-        return view('frontend.products.productDetails', compact('product','menus','relatedProducts','review_count'));
+        return view('frontend.pages.pageDetails',compact('product'));
     }
 
     public function signinPage()

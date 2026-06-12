@@ -116,7 +116,7 @@ Route::get('/category/{id}/{slug}/{menu}', [ViewController::class, 'categoryPage
 Route::get('/signle/sub/category/{id}', [ViewController::class, 'singleCategoryPage'])->name('category.singleCategoryPage');
 
 //Products
-Route::get('/product/details/{id}', [ViewController::class, 'productDetails'])->name('product.details');
+Route::get('/page/details/{id}', [ViewController::class, 'productDetails'])->name('product.details');
 
 Route::get('/filter-products', [ViewController::class, 'filterProducts'])
     ->name('filter.products');

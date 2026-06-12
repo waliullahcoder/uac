@@ -14,7 +14,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-USE `wwcoders_uac`;
+USE `uacbmibc_uac`;
 
 -- Dumping structure for table uac.account_transactions
 DROP TABLE IF EXISTS `account_transactions`;

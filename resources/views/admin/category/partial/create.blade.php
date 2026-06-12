@@ -23,10 +23,7 @@
                                 @php
                     
                                         $categories = \App\Models\Category::with(['children'])
-                                        ->whereNull('parent_id')
-                                        ->whereIn('position', ['mega_menu_parent', 'header', 'homepage'])
-                                        ->where('status', 1)
-                                        ->orderBy('name', 'asc')
+                                        ->whereNull('parent_id')->orderBy('name', 'asc')
                                         ->get();
                                 @endphp
                                 @foreach ($categories as $item)
