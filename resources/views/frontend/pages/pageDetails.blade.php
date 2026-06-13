@@ -225,7 +225,8 @@
 
                     <div class="col-md-5 col-lg-4">
                         <div class="course-cart-area">
-                          
+                            <div class="course-purchase-button">
+<a href="{{route('auth.signupPage')}}" class="default-btn bg-default-color mt-4"><h6>কোর্সটি কিনুন </h6></a><ul class="social-link"></ul></div>
                             
                             <div class="course-price d-flex justify-content-between">
                                                                    <h4>৳ {{$product->sale_price}} <s>৳ {{$product->regular_price}}</s></h4>
@@ -238,59 +239,9 @@
 
 
                             <div class="course-short-description">
-                                <div class="description-column d-flex justify-content-between">
-                                    <p><i class="fa-regular fa-clock"></i> Course Duration</p>
-                                    <p>12 Month</p>
-                                </div>
-                                <div class="description-column d-flex justify-content-between">
-                                    <p><i class="fa-solid fa-video"></i> Total Lecture</p>
-                                    <p>180</p>
-                                </div>
-
-
-
-
-                                <div class="description-column d-flex justify-content-between">
-                                    <p><i class="fa-solid fa-print"></i> Total Exam</p>
-                                    <p>160</p>
-                                </div>
-                                <div class="description-column d-flex justify-content-between">
-                                    <p><i class="fa-solid fa-person-walking-arrow-right"></i> Live class</p>
-                                    <p>180</p>
-                                </div>
+                                {!! $product->short_description !!}
                             </div>
                             
-
-                            
-                                                        <!-- কুপন সিস্টেম না থাকলে শুধু হিডেন ফিল্ড -->
-                                <input type="hidden" name="has_coupon_system" value="0">
-                            
-                            <div class="course-purchase-button">
-
-                                                                                                                                                                                                <a href="{{route('auth.signupPage')}}" class="default-btn bg-default-color mt-4"><h6>কোর্সটি কিনুন </h6></a>
-                                        
-                                        <ul class="social-link">
-                                        </ul>
-                                                                    
-                                
-
-
-                            </div>
-                            <div class="course-includes-area">
-                                <div class="title">
-                                    <h5>This Course includes :</h5>
-                                </div>
-                                
-                                <p><i class="fa-solid fa-globe"></i> 100% online course</p>
-                                <p><i class="fa-solid fa-tv"></i> Access on mobile , tablet and Computer</p>
-                                <p><i class="fa-solid fa-globe"></i> Provide exclusive recorded class</p>
-                                <p><i class="fa-solid fa-globe"></i> Provide a well-structured lecture sheet in PDF format.</p>
-
-                            </div>
-                            <br>
-                            <div class="cart-contact">
-                               <a href="https://whatsapp.com/channel/0029Vb7sodgEQIamDpMFhT3l"><h4 style="text-align: center"><i class="fa-solid fa-phone"></i> Whatsapp</h4></a>
-                            </div>
                         </div>
                     </div>
                 </div>
