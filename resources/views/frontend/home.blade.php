@@ -104,16 +104,17 @@
                             <div class="col-md-12 col-lg-8">
                                 <div class="home-1st-slide">
                                     <div class="variable-width">
-                                                                                    <div class="hero-slide">
+                                @foreach($products as $product)    
+                                <div class="hero-slide">
                                                 <div class="exam-package-area">
                                                     <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779692952-65608975863965.png')}}" alt="Admission Going on College Level" loading="lazy" srcset="">
+                                                        <a href="{{route('product.details',$product->id)}}">
+                                                            <img src="{{asset($product->thumbnail)}}" alt="Admission Going on College Level" loading="lazy" srcset="">
                                                         </a>
                                                     </div>
                                                     <div class="package-exam-content" id="custom-package-exam-content">
                                                         <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on College Level</a>
+                                                            <h2><a href="{{route('product.details',$product->id)}}">{{$product->name}}</a>
                                                             </h2>
                                                         </div>
                                                         <div class="row gy-2 button-and-price">
@@ -128,231 +129,16 @@
 
                                                             </div>
                                                             <div class="col-12">
-                                                                <a href="https://biddabari.com/details/Union_Social_Worker_Bullet_Batch" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
+                                                                <a href="{{route('product.details',$product->id)}}" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
                                                                     দেখুন <i class="fa-solid fa-arrow-right"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779454161-580302728296401.png')}}" alt="Admission Going on School Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on School Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779453493-505686576858688.png')}}" alt="Admission Going on University Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on University Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779692952-65608975863965.png')}}" alt="Admission Going on College Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on College Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779454161-580302728296401.png')}}" alt="Admission Going on School Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on School Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779453493-505686576858688.png')}}" alt="Admission Going on University Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on University Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779454161-580302728296401.png')}}" alt="Admission Going on School Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on School Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                                    <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="#">
-                                                            <img src="{{asset('frontend/images/courses-1779453493-505686576858688.png')}}" alt="Admission Going on University Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="#">Admission Going on University Level</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="#" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                                            </div>
+                                @endforeach    
+                              
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-4">
@@ -791,7 +577,7 @@
 
                 <div class="marquee-outer fade-up d2">
                     <div class="marquee-track" id="vidTrack" style="animation-play-state: paused;">
-                          @foreach($categories as $category)
+                          @foreach($vediocategories as $category)
                         <div class="vid-card" data-video-id="{{$category->url}}">
                             <div class="vid-thumb" onclick="playInlineVideo(this, '{{$category->url}}')">
                                 <img src="{{asset($category->image)}}" alt="{{$category->name}}" loading="lazy">

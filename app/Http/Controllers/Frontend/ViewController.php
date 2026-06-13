@@ -46,12 +46,15 @@ class ViewController extends Controller
         $get_sub_category_brand_only = $this->frontEndService->getSubCategoryBrandOnly();
 
         $products=Product::get();
+        $vediocategories= Category::whereNotNull('parent_id')
+                    ->where('status', 1)
+                    ->get();
  
-
         $homeSections = HomeSection::orderBy('serial', 'asc')->get();
         return view('frontend.home', compact(
             'slides', 
             'products',
+            'vediocategories',
             'homeSections',
             'menus',
             'get_sub_categories_all',
