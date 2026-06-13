@@ -144,7 +144,7 @@
                             <div class="col-md-12 col-lg-4">
                                 <div class="main-banner-video">
                                     <div class="ratio ratio-16x9" style="width: 100%; height: 0; padding-bottom: 49.25%;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="ডেইলি আপডেট হলো প্রতিদিনের তথ্য বা সংবাদ যা একটি নির্দিষ্ট ক্ষেত্র বা বিষয়কে কেন্দ্র করে সবার কাছে পৌঁছানোর জন্য তৈরি করা হয়। এটি সাধারণত সংবাদ, পণ্য বা সেবা সম্পর্কিত খবর, নতুন কিছু শিখতে বা জানার জন্য তথ্য প্রদান করে।">
-                                        <a href="https://biddabari.com/daily-contents">
+                                        <a href="#">
                                             <img class="img img-thumbnail-custom lazyload" src="{{asset('frontend/images/daily_update-v2-eid.webp')}}" alt="Daily Update Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" id="main-banner-video-banner" srcset="">
                                         </a>
                                     </div>

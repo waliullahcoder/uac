@@ -504,7 +504,7 @@
 
     
     <!-- FAB BUTTON -->
-    <button id="bd-fab" onclick="BW.toggle()" aria-label="UAC AI">
+    <!-- <button id="bd-fab" onclick="BW.toggle()" aria-label="UAC AI">
         <span class="bd-fi">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"
                 stroke-linecap="round">
@@ -520,7 +520,7 @@
             </svg>
         </span>
         <span id="bd-pip">1</span>
-    </button>
+    </button> -->
 
     <!-- WIDGET BOX -->
     <div id="bd-box">

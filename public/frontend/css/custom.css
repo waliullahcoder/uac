@@ -374,7 +374,7 @@
         /* Adjustments for Tablets */
         @media (max-width: 1440px) {
             #Home_main_banner {
-                background-image: url("https://biddabari.com/frontend/assets/frontend/images/home-page/Background-banner-v2.webp");
+                background-image: url("https://uac-bd.com/frontend/assets/frontend/images/home-page/Background-banner-v2.webp");
                 background-size: cover;
                 /* Maintains a good aspect ratio */
                 min-height: 250px;
