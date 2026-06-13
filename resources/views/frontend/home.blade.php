@@ -629,8 +629,237 @@
             </div>
         </section>
 
+<style>
+.gallery-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+}
 
-      
+.gallery-card:hover{
+    transform:translateY(-6px);
+}
+
+.gallery-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:.3s;
+}
+
+.gallery-card:hover .gallery-overlay{
+    opacity:1;
+}
+
+.gallery-overlay i{
+    color:#fff;
+    font-size:30px;
+}
+
+/* MODAL */
+#galleryModal .modal-content{
+    background:transparent;
+    border:none;
+}
+
+#galleryModal .modal-body{
+    padding:0;
+    overflow:hidden;
+    text-align:center;
+    cursor:grab;
+}
+
+#galleryModal .modal-body:active{
+    cursor:grabbing;
+}
+
+#modalGalleryImage{
+    max-width:none;
+    max-height:90vh;
+    user-select:none;
+    transform:scale(1);
+    transition:transform .1s ease;
+    position:relative;
+}
+
+.gallery-close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:40px;
+    color:#fff;
+    cursor:pointer;
+    z-index:9999;
+    font-weight:bold;
+}
+</style>
+
+
+<section id="gallery-section" class="py-5 bg-light">
+    <div class="container">
+
+        <div class="row mb-5 text-center">
+            <h2 class="fw-bold">Photo <span class="text-primary">Gallery</span></h2>
+            <p class="text-muted">আমাদের কিছু কার্যক্রম</p>
+        </div>
+
+        <div class="row g-4">
+
+            @foreach($galleries as $image)
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <div class="gallery-card"
+                     onclick="openGalleryModal('{{ asset($image->image) }}')">
+
+                    <img src="{{ asset($image->image) }}"
+                         class="gallery-img">
+
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+
+                </div>
+
+            </div>
+            @endforeach
+            
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MODAL -->
+<div class="modal fade" id="galleryModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+
+            <span class="gallery-close" data-bs-dismiss="modal">&times;</span>
+
+            <div class="modal-body">
+                <img id="modalGalleryImage" src="">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX, startY;
+
+function openGalleryModal(url){
+    const img = document.getElementById('modalGalleryImage');
+
+    img.src = url;
+
+    scale = 1;
+    posX = 0;
+    posY = 0;
+
+    updateTransform();
+
+    new bootstrap.Modal(document.getElementById('galleryModal')).show();
+}
+
+function updateTransform(){
+    const img = document.getElementById('modalGalleryImage');
+    img.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+
+    const img = document.getElementById('modalGalleryImage');
+
+    /* ZOOM */
+    img.addEventListener('wheel', function(e){
+        e.preventDefault();
+
+        if(e.deltaY < 0){
+            scale += 0.2;
+        }else{
+            scale -= 0.2;
+        }
+
+        if(scale < 1) scale = 1;
+        if(scale > 5) scale = 5;
+
+        updateTransform();
+    });
+
+    /* DRAG MOUSE */
+    img.addEventListener('mousedown', function(e){
+        isDragging = true;
+        startX = e.clientX - posX;
+        startY = e.clientY - posY;
+    });
+
+    document.addEventListener('mousemove', function(e){
+        if(!isDragging) return;
+
+        posX = e.clientX - startX;
+        posY = e.clientY - startY;
+
+        updateTransform();
+    });
+
+    document.addEventListener('mouseup', function(){
+        isDragging = false;
+    });
+
+    /* TOUCH MOBILE */
+    img.addEventListener('touchstart', function(e){
+        isDragging = true;
+        startX = e.touches[0].clientX - posX;
+        startY = e.touches[0].clientY - posY;
+    });
+
+    img.addEventListener('touchmove', function(e){
+        if(!isDragging) return;
+
+        posX = e.touches[0].clientX - startX;
+        posY = e.touches[0].clientY - startY;
+
+        updateTransform();
+    });
+
+    img.addEventListener('touchend', function(){
+        isDragging = false;
+    });
+
+});
+
+
+/* RESET ON CLOSE */
+document.getElementById('galleryModal')
+.addEventListener('hidden.bs.modal', function(){
+
+    scale = 1;
+    posX = 0;
+    posY = 0;
+
+    updateTransform();
+});
+</script>
+
 
     </main>
     <!-- Modal -->
