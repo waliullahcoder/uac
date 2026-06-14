@@ -304,7 +304,7 @@
                         <p class="pointer-cursor text-center text-uppercase">Live Class</p>
                     </a>
 
-                    <a href="#/with-mukul-sir" class="emergency-box">
+                    <a href="#/with-zahan-sir" class="emergency-box">
                         <img src="{{asset('frontend/images/ZahanSir.png')}}" alt="Mukul Sir এর সাথে" class="img-fluid">
                         <p class="pointer-cursor text-center">Zahan Sir এর সাথে</p>
                     </a>
@@ -351,48 +351,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#/category/Daily-Exam-Test">
-                                        <i class="fa-solid fa-hand-point-right"></i>  Daily Exam Test
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/BCS">
-                                        <i class="fa-solid fa-hand-point-right"></i>  SSC
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/PRIMARY">
-                                        <i class="fa-solid fa-hand-point-right"></i>  PRIMARY
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/NTRCA">
-                                        <i class="fa-solid fa-hand-point-right"></i>  NTRCA
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/BANK">
-                                        <i class="fa-solid fa-hand-point-right"></i>  HSC
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/11-20th-Grade">
-                                        <i class="fa-solid fa-hand-point-right"></i>  11-20th Grade
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/9th-10th-Grade">
-                                        <i class="fa-solid fa-hand-point-right"></i>  9th-10th Grade
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#/category/RECORDED-COURSES">
-                                        <i class="fa-solid fa-hand-point-right"></i>  RECORDED COURSES
-                                    </a>
-                                </li>
-                            </ul>
+                          
                         </div>
                         <div class="col-md-3 col-6 mb-1" id="home-services-area-two" data-toggle="tooltip"
                             data-placement="bottom" title="Tooltip on bottom">

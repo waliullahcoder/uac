@@ -50,7 +50,7 @@ class ViewController extends Controller
                     ->where('status', 1)
                     ->get();
 
-        $galleries=  Category::where('parent_id',8)->get();         
+        $galleries=  Category::where('parent_id',432)->get();         
 
         $homeSections = HomeSection::orderBy('serial', 'asc')->get();
         return view('frontend.home', compact(
