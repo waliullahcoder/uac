@@ -29,11 +29,10 @@
                                 School Admission
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="schoolDropdown">
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 1-5</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 6</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 7</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 8</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> Class 9</a></li>
+                                @foreach($schoolcategories as $scategory)
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> {{$scategory->name}}</a></li>
+                                @endforeach
+                               
                             </ul>
                         </li>
 
@@ -44,10 +43,10 @@
                                 College Admission
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> Science Group</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> Business Studies</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> Humanities</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> English Version</a></li>
+                                @foreach($collegecategories as $ccategory)
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> {{$ccategory->name}}</a></li>
+                                @endforeach
+                                
                             </ul>
                         </li>
 
@@ -58,17 +57,15 @@
                                 University Admission
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="universityDropdown">
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> A Unit (Science)</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> B Unit (Humanities)</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> C Unit (Business Studies)</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> D Unit (Mixed)</a></li>
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> GST Admission</a></li>
+                                @foreach($universitycategories as $ucategory)
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> {{$ucategory->name}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
 
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('auth.signupPage')}}">Contact</a>
+                             <a class="nav-link" href="tel:01922222222">01922222244</a>
                         </li>
 
                        

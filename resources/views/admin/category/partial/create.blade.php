@@ -45,42 +45,42 @@
                         <div class="col-12">
                                     <label for="position" class="form-label"><b>Position</b></label>
                                     <select name="position" id="position" class="form-select" required>
-                                      <option value="header_top" {{ old('position') == 'header_top' ? 'selected' : '' }}>
-                                        Header Top
+                                      <option value="school" {{ old('position') == 'school' ? 'selected' : '' }}>
+                                        School
                                     </option>
 
-                                    <option value="header" {{ old('position') == 'header' ? 'selected' : '' }}>
-                                        Header Middle 
+                                    <option value="college" {{ old('position') == 'college' ? 'selected' : '' }}>
+                                        College
                                     </option>
 
-                                     <option value="mega_menu_parent" {{ old('position') == 'mega_menu_parent' ? 'selected' : '' }}>
-                                        Mega Menu Parent
+                                     <option value="university" {{ old('position') == 'university' ? 'selected' : '' }}>
+                                        University
                                     </option>
-                                    <option value="mega_menu_child" {{ old('position') == 'mega_menu_child' ? 'selected' : '' }}>
-                                        Mega Menu Child
+                                    <option value="emergency_desk" {{ old('position') == 'emergency_desk' ? 'selected' : '' }}>
+                                        Emergency Desk
                                     </option>
-                                    <option value="homepage" {{ old('position') == 'homepage' ? 'selected' : '' }}>
-                                        Home Page
+                                    <option value="admitted_students" {{ old('position') == 'admitted_students' ? 'selected' : '' }}>
+                                        Admitted Students
                                     </option>
-                                    <option value="homepage_banner_category" {{ old('position') == 'homepage_banner_category' ? 'selected' : '' }}>
-                                        Home Page->Banner Category
+                                    <option value="premium_courses" {{ old('position') == 'premium_courses' ? 'selected' : '' }}>
+                                        Latest Premium Courses
                                     </option>
-                                    <option value="homepage_writter_category" {{ old('position') == 'homepage_writter_category' ? 'selected' : '' }}>
-                                        Home Page->Writter Category
+                                    <option value="video" {{ old('position') == 'video' ? 'selected' : '' }}>
+                                        Video
                                     </option>
-                                    <option value="homepage_others_category" {{ old('position') == 'homepage_others_category' ? 'selected' : '' }}>
-                                        Home Page->Others Category
+                                    <option value="gallery" {{ old('position') == 'gallery' ? 'selected' : '' }}>
+                                        Gallery
                                     </option>
-                                    <option value="homepage_brands_category" {{ old('position') == 'homepage_brands_category' ? 'selected' : '' }}>
-                                        Home Page->Brands Category
-                                    </option>
-
-                                    <option value="footer" {{ old('position') == 'footer' ? 'selected' : '' }}>
-                                        Footer Column1
+                                    <option value="about" {{ old('position') == 'about' ? 'selected' : '' }}>
+                                       About
                                     </option>
 
-                                    <option value="footer_col2" {{ old('position') == 'footer_col2' ? 'selected' : '' }}>
-                                        Footer Column2
+                                    <option value="resources" {{ old('position') == 'resources' ? 'selected' : '' }}>
+                                        Resources
+                                    </option>
+
+                                    <option value="contact" {{ old('position') == 'contact' ? 'selected' : '' }}>
+                                        Contact
                                     </option>
 
                                     </select>

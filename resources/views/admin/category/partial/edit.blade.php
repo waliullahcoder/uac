@@ -69,42 +69,48 @@
                     <div class="mb-2">
                                     <label for="position" class="form-label"><b>Position</b></label>
                                     <select name="position" id="position" class="form-select" required>
-                                      <option value="header_top" {{ $data->position == 'header_top' ? 'selected' : '' }}>
-                                        Header Top
+                                     <option value="school" {{ $data->position == 'school' ? 'selected' : '' }}>
+                                        School
                                     </option>
 
-                                    <option value="header" {{ $data->position == 'header' ? 'selected' : '' }}>
-                                        Header Middle
+                                    <option value="college" {{ $data->position == 'college' ? 'selected' : '' }}>
+                                        College
                                     </option>
 
-                                    <option value="mega_menu_parent" {{ $data->position == 'mega_menu_parent' ? 'selected' : '' }}>
-                                        Mega Menu Parent
-                                    </option>
-                                    <option value="mega_menu_child" {{ $data->position == 'mega_menu_child' ? 'selected' : '' }}>
-                                        Mega Menu Child
-                                    </option>
-                                    <option value="homepage" {{ $data->position == 'homepage' ? 'selected' : '' }}>
-                                        Home Page
-                                    </option>
-                                    <option value="homepage_banner_category" {{ $data->position == 'homepage_banner_category' ? 'selected' : '' }}>
-                                        Home Page->Banner Category
-                                    </option>
-                                    <option value="homepage_writter_category" {{ $data->position == 'homepage_writter_category' ? 'selected' : '' }}>
-                                        Home Page->Writter Category
-                                    </option>
-                                    <option value="homepage_others_category" {{ $data->position == 'homepage_others_category' ? 'selected' : '' }}>
-                                        Home Page->Others Category
-                                    </option>
-                                    <option value="homepage_brands_category" {{ $data->position == 'homepage_brands_category' ? 'selected' : '' }}>
-                                        Home Page->Brands Category
+                                    <option value="university" {{ $data->position == 'university' ? 'selected' : '' }}>
+                                        University
                                     </option>
 
-                                    <option value="footer" {{ $data->position == 'footer' ? 'selected' : '' }}>
-                                        Footer Column1
+                                    <option value="emergency_desk" {{ $data->position == 'emergency_desk' ? 'selected' : '' }}>
+                                        Emergency Desk
                                     </option>
 
-                                    <option value="footer_col2" {{ $data->position == 'footer_col2' ? 'selected' : '' }}>
-                                        Footer Column2
+                                    <option value="admitted_students" {{ $data->position == 'admitted_students' ? 'selected' : '' }}>
+                                        Admitted Students
+                                    </option>
+
+                                    <option value="premium_courses" {{ $data->position == 'premium_courses' ? 'selected' : '' }}>
+                                        Latest Premium Courses
+                                    </option>
+
+                                    <option value="video" {{ $data->position == 'video' ? 'selected' : '' }}>
+                                        Video
+                                    </option>
+
+                                    <option value="gallery" {{ $data->position == 'gallery' ? 'selected' : '' }}>
+                                        Gallery
+                                    </option>
+
+                                    <option value="about" {{ $data->position == 'about' ? 'selected' : '' }}>
+                                        About
+                                    </option>
+
+                                    <option value="resources" {{ $data->position == 'resources' ? 'selected' : '' }}>
+                                        Resources
+                                    </option>
+
+                                    <option value="contact" {{ $data->position == 'contact' ? 'selected' : '' }}>
+                                        Contact
                                     </option>
 
                                     </select>

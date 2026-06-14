@@ -51,6 +51,21 @@ class AppServiceProvider extends ServiceProvider
                     ->where('status', 1)
                     ->get()
             );
+            $view->with(
+                'schoolcategories',
+                Category::where('position', 'school')
+                    ->get()
+            );
+            $view->with(
+                'collegecategories',
+                Category::where('position', 'college')
+                    ->get()
+            );
+             $view->with(
+                'universitycategories',
+                Category::where('position', 'university')
+                    ->get()
+            );
              $view->with(
                 'categories_prod',
                 Category::with(['children'])

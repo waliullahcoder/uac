@@ -47,10 +47,10 @@ class ViewController extends Controller
 
         $products=Product::get();
         $vediocategories= Category::whereNotNull('parent_id')
-                    ->where('status', 1)
+                    ->where('position', 'video')
                     ->get();
 
-        $galleries=  Category::where('parent_id',432)->get();         
+        $galleries=  Category::where('position','gallery')->get();         
 
         $homeSections = HomeSection::orderBy('serial', 'asc')->get();
         return view('frontend.home', compact(

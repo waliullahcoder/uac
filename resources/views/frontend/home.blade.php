@@ -14,7 +14,7 @@
     <section class="row" id="Home_add" style="margin-top:10px;">
         <div class="col-lg-2" style="padding: calc(var(--bs-gutter-x)* .0); !important;">
             <div class="home-1st-add-image">
-                <a href="https://play.google.com/store/apps/details?id=com.nextive.uac-bd.021" target="_blank"><img
+                <a href="#" target="_blank"><img
                         src="{{asset('frontend/images/home-page-bn-1-v13-eid.webp')}}" alt="Home 1st Add Banner" srcset="" loading="lazy"></a>
             </div>
         </div>
@@ -24,169 +24,85 @@
            padding-top: 0 !important;
            padding-bottom: 0 !important;">
             <div class="home-2nd-add-image">
-                <a href="#/instructor"><img src="{{asset('frontend/images/home-page-bn-2-v13-eid-v2.png')}}"
+                <a href="#"><img src="{{asset('frontend/images/home-page-bn-2-v13-eid-v2.png')}}"
                         alt="Home 2nd Add Banner" srcset="" loading="lazy"></a>
             </div>
         </div>
         <div class="col-lg-3" style="padding: 0 !important;">
             <div class="home-3rd-add-image dropdown">
-                <a href="#/free-course" class="dropdown-toggle" id="home3rdAddDropdown"
+                <a href="#" class="dropdown-toggle" id="home3rdAddDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{asset('frontend/images/home-page-bn-3-v13-eid.webp')}}" alt="Home 3rd Add Banner" loading="lazy" srcset="">
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="home3rdAddDropdown"
-                    style="max-height: 400px; overflow-y: auto;">
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/IELTS">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  IELTS
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/Daily-Exam-Test">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  Daily Exam Test
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/BCS">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  SSC
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/PRIMARY">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  PRIMARY
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/NTRCA">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  NTRCA
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/BANK">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  HSC
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/11-20th-Grade">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  11-20th Grade
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/9th-10th-Grade">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  9th-10th Grade
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/RECORDED-COURSES">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  RECORDED COURSES
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#/free-exam/Recent-Affairs">
-                            <i class="fa-solid fa-arrows-turn-right"></i>  Recent Affairs
-                        </a>
-                    </li>
-                </ul>
+                
             </div>
         </div>
     </section>
  
     <main>
        
-         <section id="Home_main_banner" class="background-res background-ats py-3 py-lg-5 d-none d-lg-block" style="background-image: url('frontend/images/Background-banner-v5-eid.png')">
-            <div class="container-fluid">
-                <div class="row gy-4">
-                    <div class="col-lg-3 col-md-12">
-                        
-                    </div>
-                    <div class="col-lg-9 col-md-12">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-8">
-                                <div class="home-1st-slide">
-                                    <div class="variable-width">
-                                @foreach($products as $product)    
-                                <div class="hero-slide">
-                                                <div class="exam-package-area">
-                                                    <div class="package-exam-image">
-                                                        <a href="{{route('product.details',$product->id)}}">
-                                                            <img src="{{asset($product->thumbnail)}}" alt="Admission Going on College Level" loading="lazy" srcset="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="package-exam-content" id="custom-package-exam-content">
-                                                        <div class="package-exam-title pt-3" id="custom-package-exam-title">
-                                                            <h2><a href="{{route('product.details',$product->id)}}">{{$product->name}}</a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="row gy-2 button-and-price">
-                                                            <div class="col-12">
-                                                                <div class="package-exam-rating">
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="fas fa-star"></i>
-                                                                    <i class="far fa-star"></i>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <a href="{{route('product.details',$product->id)}}" class="btn btn_warning text-white bg-brand w-100"> বিস্তারিত
-                                                                    দেখুন <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                @endforeach    
-                              
-                                        </div>
+      <section id="Home_Our_courses" style="padding-top:0px;">
+            <div class="container">
+                <div class="all-courses-area">
+                    <div class="row g-2 g-md-3 g-lg-4">
+                        @foreach($products as $product)
+                        <div class="col-6 col-lg-3 mt-4">
+                            <div class="exam-package-area">
+                                <div class="package-exam-image">
+                                    <a href="{{route('product.details',$product->id)}}"><img
+                                            src="{{asset($product->thumbnail)}}" alt=""
+                                            loading="lazy"></a>
                                 </div>
-                            </div>
-                            <div class="col-md-12 col-lg-4">
-                                <div class="main-banner-video">
-                                    <div class="ratio ratio-16x9" style="width: 100%; height: 0; padding-bottom: 49.25%;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="ডেইলি আপডেট হলো প্রতিদিনের তথ্য বা সংবাদ যা একটি নির্দিষ্ট ক্ষেত্র বা বিষয়কে কেন্দ্র করে সবার কাছে পৌঁছানোর জন্য তৈরি করা হয়। এটি সাধারণত সংবাদ, পণ্য বা সেবা সম্পর্কিত খবর, নতুন কিছু শিখতে বা জানার জন্য তথ্য প্রদান করে।">
-                                        <a href="#">
-                                            <img class="img img-thumbnail-custom lazyload" src="{{asset('frontend/images/daily_update-v2-eid.webp')}}" alt="Daily Update Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" id="main-banner-video-banner" srcset="">
-                                        </a>
+                                <div class="package-exam-content mx-2 mx-lg-3">
+                                    <div class="package-exam-title pt-3">
+                                        <h2>
+                                            <a href="#">{{$product->name}}</a>
+                                        </h2>
                                     </div>
-                                </div>
-                                <div class="home-video-feature-area mt-2">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <div class="home-feature-video">
-                                                <div class="ratio ratio-1x1" style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
-                                                    <img class="img img-thumbnail-custom lazyload" src="{{asset('frontend/images/recent-job-solution-v1-eid.webp')}}" alt="Recent Job Solution Banner" style="position: absolute; top: 9%; left: 0; width: 100%; height: 76%;" srcset="">
-                                                    <!-- Transparent overlay to trigger the click event -->
-                                                    <div onclick="showVideoModal('https://www.youtube.com/embed/87jPFaOpFrk?autoplay=1')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                                                    </div>
-                                                </div>
+                                    <div class="row button-and-price pb-3 pb-lg-4">
+                                        <div class="col">
+                                            <div class="package-exam-rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
                                             </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="home-feature-video">
-                                                <div class="ratio ratio-1x1" style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
-                                                    <img class="img img-thumbnail-custom lazyload" src="{{asset('frontend/images/teacher-trip-advice-v1-eid.webp')}}" alt="Teachers Tips & Advice Banner" style="position: absolute; top: 9%; left: 0; width: 100%; height: 76%;" srcset="">
-                                                    <!-- Transparent overlay to trigger the click event -->
-                                                    <div onclick="showVideoModal('https://www.youtube.com/embed/_UgDurRDFew?autoplay=1')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                                                    </div>
+
+
+
+                                            <div class="package-exam-price">
+
+                                                <div class="package-exam-total-price text-muted">
+                                                    <s class="text-muted">৳ {{$product->regular_price}}</s>
                                                 </div>
+                                                <div class="package-exam-discount-price">৳ {{$product->sale_price}}</div>
                                             </div>
+
                                         </div>
-                                        <div class="col-4">
-                                            <div class="home-feature-video">
-                                                <div class="ratio ratio-1x1" style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
-                                                    <img class="img img-thumbnail-custom lazyload" src="{{asset('frontend/images/app-website-use-rules-v2-eid.webp')}}" alt="APP Website Uses Rules Banner" style="position: absolute; top: 9%; left: 0; width: 100%; height: 76%;" srcset="">
-                                                    <!-- Transparent overlay to trigger the click event -->
-                                                    <div onclick="showVideoModal('https://www.youtube.com/embed/bwGq8IHxRxI?autoplay=1')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                                                    </div>
+                                        <div class="col text-end">
+                                            <div class="package-exam-button">
+                                                <div class="package-exam-details">
+                                                    <a
+                                                        href="{{route('product.details',$product->id)}}">View
+                                                        Details </a>
                                                 </div>
+                                                <a
+                                                    href="{{route('auth.signupPage')}}">
+                                                    <div class="custom-btn btn-12">
+                                                        <span>Click on</span><span>Admission</span>
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
 
+                  
                 </div>
             </div>
         </section>
@@ -334,7 +250,7 @@
             <div class="container-fluid py-3">
                 <div class="row">
                     <div class="title-area text-center">
-                        <h2 class="fw-bold mb-4 custom-section-title">Premium StudyRoom <br></h2>
+                        <h2 class="fw-bold mb-4 custom-section-title">Admitted Students Only<br></h2>
 
                     </div>
                 </div>
@@ -377,7 +293,7 @@
                                         <img src="{{asset('frontend/images/next-page-v5.png')}}" alt="" loading="lazy">
                                     </div>
                                     <div class="my-home-service-content">
-                                        <h3>Admission Test</h3>
+                                        <h3>Result</h3>
                                     </div>
                                 </div>
                             </a>
@@ -390,7 +306,7 @@
                                         <img src="{{asset('frontend/images/it-career-v5.png')}}" alt="" loading="lazy">
                                     </div>
                                     <div class="my-home-service-content">
-                                        <h3>IELTS প্রস্তুতি</h3>
+                                        <h3>Top List</h3>
                                     </div>
                                 </div>
                             </a>

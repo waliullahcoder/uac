@@ -1,7 +1,11 @@
 @extends('layouts.frontend.app')
 
 @section('content')
-
+<style>
+    .form-control,.form-select{
+        border-radius:1px;
+    }
+</style>
 <section id="RegistrationForm" class="py-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -34,75 +38,53 @@
                                         <option value="Bangla">Bangla</option>
                                     </select>
                                 </div>
-
-                                <div class="col-md-12">
-                                    <label class="form-label">Full Name</label>
-                                    <input type="text" name="name" class="form-control">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Mother's Name</label>
-                                    <input type="text" name="mother_name" class="form-control">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Father's Name</label>
-                                    <input type="text" name="father_name" class="form-control">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Phone (Login ID)</label>
-                                    <input type="text" name="phone" class="form-control">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Date of Birth</label>
-                                    <input type="date" name="date_of_birth" class="form-control">
-                                </div>
-
-                                
-
-                                <!-- BLOOD -->
-                                <div class="col-md-4" style="display:none">
-                                    <label class="form-label">Blood Group</label>
-                                    <select name="blood_group" class="form-select">
-                                        <option>A+</option><option>A-</option>
-                                        <option>B+</option><option>B-</option>
-                                        <option>O+</option><option>O-</option>
-                                        <option>AB+</option><option>AB-</option>
+                                 <div class="col-md-6">
+                                    <select name="group" class="form-select">
+                                        <option value="N/A">Select Group</option>
+                                        <option value="Science">Science</option>
+                                        <option value="Business Studies">Business Studies</option>
+                                        <option value="Humanities">Humanities</option>
                                     </select>
                                 </div>
 
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Student's Name">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="mother_name" class="form-control" placeholder="Mother's Name">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="father_name" class="form-control" placeholder="Father's Name">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="phone" class="form-control" placeholder="Whatsapp Number">
+                                </div>
+                                 <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="contact_number" class="form-control" placeholder="Extra Number">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <textarea name="address" class="form-control" rows="1" placeholder="Address"></textarea>
+                                </div>
+
                             </div>
 
-                            <!-- GROUP -->
-                            <hr class="my-4">
-                            <h5 class="text-primary">Group Selection</h5>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="group" value="Science">
-                                <label class="form-check-label">Science</label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="group" value="Business Studies">
-                                <label class="form-check-label">Business Studies</label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="group" value="Humanities">
-                                <label class="form-check-label">Humanities</label>
-                            </div>
+                          
 
                             <!-- EDUCATION -->
                             <hr class="my-4">
-                            <h5 class="text-primary">Educational Information</h5>
-
                             <div class="row g-3">
 
                                 <div class="col-md-4">
-                                    <label>Exam Name</label>
                                     <select name="exam_name" class="form-select">
+                                        <option>Exam Name</option>
                                         <option>SSC</option>
                                         <option>School</option>
                                         <option>HSC</option>
@@ -111,62 +93,24 @@
                                 </div>
 
                                 <div class="col-md-8">
-                                    <label>Institution</label>
-                                    <input type="text" name="institution" class="form-control">
+                                    <input type="text" name="institution" class="form-control" placeholder="Institution's Name">
                                 </div>
                                 <div class="col-md-4">
-                                    <label>Year</label>
-                                    <input type="text" name="year" class="form-control">
+                                    <input type="text" name="year" class="form-control" placeholder="Year">
                                 </div>
 
 
                                 <div class="col-md-8">
-                                    <label>Board</label>
-                                    <input type="text" name="board" class="form-control">
+                                    <input type="text" name="board" class="form-control" placeholder="Board">
                                 </div>
 
-                                
-                                <div class="col-md-4" style="display:none">
-                                    <label>Grade</label>
-                                    <input type="text" name="grade" class="form-control">
-                                </div>
-
-                                <div class="col-md-4" style="display:none">
-                                    <label>GPA (With 4th)</label>
-                                    <input type="text" name="gpa_with_4th" class="form-control">
-                                </div>
-
-                                <div class="col-md-4" style="display:none">
-                                    <label>GPA (Without 4th)</label>
-                                    <input type="text" name="gpa_without_4th" class="form-control">
-                                </div>
 
                             </div>
 
-                            <!-- ADDRESS -->
-                            <hr class="my-4">
-                            <h5 class="text-primary">Address</h5>
+                           
+                           
 
-                            <textarea name="address" class="form-control" rows="3"></textarea>
-
-                            <!-- CONTACT -->
-                            <hr class="my-4">
-                            <h5 class="text-primary">Contact Information</h5>
-
-                            <div class="row g-3">
-
-                                <div class="col-md-6">
-                                    <label>Email</label>
-                                    <input type="email" name="email" class="form-control">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label>Contact Number</label>
-                                    <input type="text" name="contact_number" class="form-control">
-                                </div>
-
-                            </div>
-
+                          
                             <!-- IMAGE UPLOAD -->
                             <hr class="my-4">
                             <h5 class="text-primary">Profile Photo</h5>
@@ -187,29 +131,7 @@
                                 </div>
                             </div>
 
-                            <!-- PAYMENT -->
-                            <hr class="my-4">
-                            <h5 class="text-primary">Payment Method</h5>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment_method" value="Bkash">
-                                <label>Bkash</label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment_method" value="Rocket">
-                                <label>Rocket</label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment_method" value="Nogod">
-                                <label>Nogod</label>
-                            </div>
-
-                            <div class="mt-3">
-                                <label>Payment Mobile Number</label>
-                                <input type="text" name="payment_mobile" class="form-control">
-                            </div>
+                           
 
                             <!-- SUBMIT -->
                             <div class="d-flex justify-content-between align-items-center mt-4">
