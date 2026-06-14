@@ -72,7 +72,7 @@
                             
                               <div class="course-purchase-button">
 
-                                                                                                                                                                                                          <a href="{{route('auth.signupPage')}}" class="default-btn bg-default-color mt-4"><h6>কোর্সটি কিনুন </h6></a>
+                                                                                                                                                                                                          <a href="{{route('auth.signupPage',$product->id)}}" class="default-btn bg-default-color mt-4"><h6>কোর্সটি কিনুন </h6></a>
                                           
                                           <ul class="social-link">
                                           </ul>
@@ -226,7 +226,7 @@
                     <div class="col-md-5 col-lg-4">
                         <div class="course-cart-area">
                             <div class="course-purchase-button">
-<a href="{{route('auth.signupPage')}}" class="default-btn bg-default-color mt-4"><h6>কোর্সটি কিনুন </h6></a><ul class="social-link"></ul></div>
+<a href="{{route('auth.signupPage',$product->id)}}" class="default-btn bg-default-color mt-4"><h6>কোর্সটি কিনুন </h6></a><ul class="social-link"></ul></div>
                             
                             <div class="course-price d-flex justify-content-between">
                                                                    <h4>৳ {{$product->sale_price}} <s>৳ {{$product->regular_price}}</s></h4>

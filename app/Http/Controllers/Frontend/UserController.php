@@ -7,6 +7,9 @@ use App\Models\HomeSection;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Sales;
+use App\Models\Order;
+use App\Models\OrderItem;
+use App\Models\ProductVariant;
 use App\Models\Collection;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Coa;
@@ -59,6 +62,7 @@ class UserController extends Controller
 
         public function signupPost(Request $request)
         {
+               
           $request->validate([
                 'name'  => 'required|string|max:255',
                 'phone' => [
@@ -179,6 +183,41 @@ class UserController extends Controller
                     'credit_limit' => $request->credit_limit,
                     'created_by' => Auth::id(),
                 ]);
+
+            // Order create (NOW WITH TOTALS)
+     
+            $product = json_decode(Product::find($request->product_id));
+       
+            $order = Order::create([
+                'user_id'        => $user->id,
+                'order_number'   => 'ORD-' . time(),
+                'subtotal'       => $product->sale_price,
+                'discount'       => 0,
+                'tax'            => 0,
+                'total'          => $product->sale_price,
+                'payment_method' => 'cod',
+                'status'         => 'pending',
+            ]);
+
+            // Order items + stock reduce
+           
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $product->id,
+                    'product_variant_id' => $product->variants->id ?? null,
+                    'qty' => 1,
+                    'price' => $product->sale_price,
+                    'total' => $product->sale_price,
+                ]);
+
+                // Variant stock reduce
+                // if (!empty($product->variants->id) || !empty($product->id)) {
+                //     ProductVariant::where('id', $product->variants?->id)->orWhere('product_id', $product->id)
+                //         ->decrement('stock', 1);
+                // }
+            
+
+
             });
         } catch (\Exception $e) {
             dd($e);

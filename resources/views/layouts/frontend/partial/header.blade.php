@@ -10,7 +10,7 @@
 
                     <div class="moblie-icon">
                         <div class="nav-item login-button">
-                           <a href="{{route('auth.signupPage')}}" type="button" class="btn btn_warning">Admission</a>
+                           <a href="{{route('auth.signupPage',1)}}" type="button" class="btn btn_warning">Admission</a>
                         </div>
                         <div>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

@@ -128,7 +128,7 @@
 
                                 <div class="mt-4">
                                     <small>New student?</small><br>
-                                    <a href="{{ route('auth.signupPage') }}" class="btn btn-light btn-sm mt-2 px-4 rounded-pill">
+                                    <a href="{{ route('auth.signupPage',1) }}" class="btn btn-light btn-sm mt-2 px-4 rounded-pill">
                                         Create Account
                                     </a>
                                 </div>
@@ -203,7 +203,7 @@
 
                                 <p class="text-center mt-4 mb-0">
                                     Don't have an account?
-                                    <a href="{{ route('auth.signupPage') }}" class="signup-link">
+                                    <a href="{{ route('auth.signupPage',1) }}" class="signup-link">
                                         Sign up
                                     </a>
                                 </p>

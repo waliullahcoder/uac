@@ -88,7 +88,7 @@
                                                         Details </a>
                                                 </div>
                                                 <a
-                                                    href="{{route('auth.signupPage')}}">
+                                                    href="{{route('auth.signupPage',$product->id)}}">
                                                     <div class="custom-btn btn-12">
                                                         <span>Click on</span><span>Admission</span>
                                                     </div>
@@ -395,7 +395,7 @@
                                                         Details </a>
                                                 </div>
                                                 <a
-                                                    href="{{route('auth.signupPage')}}">
+                                                    href="{{route('auth.signupPage',$product->id)}}">
                                                     <div class="custom-btn btn-12">
                                                         <span>ক্লিক করুন!</span><span>কোর্সটি কিনুন</span>
                                                     </div>

@@ -21,7 +21,7 @@ Route::get('/home-section-load/{type}', [ViewController::class, 'loadHomeSection
 Route::get('/login', function () {
     return redirect()->route('auth.signinPage');
 })->name('login');
-Route::get('/signup', [ViewController::class, 'signupPage'])->name('auth.signupPage');
+Route::get('/signup/{id}', [ViewController::class, 'signupPage'])->name('auth.signupPage');
 
 Route::post('/signin', [UserController::class, 'signinPost'])->name('user.signinPost');
 Route::post('/signup', [UserController::class, 'signupPost'])->name('user.signupPost');

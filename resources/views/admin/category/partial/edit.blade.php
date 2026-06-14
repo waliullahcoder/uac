@@ -69,6 +69,7 @@
                     <div class="mb-2">
                                     <label for="position" class="form-label"><b>Position</b></label>
                                     <select name="position" id="position" class="form-select" required>
+                                        <option value="">-</option>
                                      <option value="school" {{ $data->position == 'school' ? 'selected' : '' }}>
                                         School
                                     </option>

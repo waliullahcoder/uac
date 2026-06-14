@@ -24,7 +24,9 @@
                             <ul class="dropdown-menu" aria-labelledby="schoolDropdown">
                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 1-5</a></li>
                                   @foreach($schoolcategories as $scategory)
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-graduation-cap"></i> {{$scategory->name}}</a></li>
+                                    @foreach($scategory->products as $product)
+                                    <li><a class="dropdown-item" href="{{route('auth.signupPage',$product->id)}}"><i class="fa-solid fa-graduation-cap"></i> {{$product->name}}</a></li>
+                                    @endforeach
                                 @endforeach
                             </ul>
                         </li>
@@ -37,7 +39,9 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
                                @foreach($collegecategories as $ccategory)
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-book"></i> {{$ccategory->name}}</a></li>
+                                @foreach($ccategory->products as $product)
+                                    <li><a class="dropdown-item" href="{{route('auth.signupPage',$product->id)}}"><i class="fa-solid fa-book"></i> {{$product->name}}</a></li>
+                                    @endforeach
                                 @endforeach
                             </ul>
                         </li>
@@ -50,14 +54,16 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="universityDropdown">
                                @foreach($universitycategories as $ucategory)
-                                <li><a class="dropdown-item" href="{{route('auth.signupPage')}}"><i class="fa-solid fa-arrow-right"></i> {{$ucategory->name}}</a></li>
+                                    @foreach($ucategory->products as $product)
+                                    <li><a class="dropdown-item" href="{{route('auth.signupPage',$product->id)}}"><i class="fa-solid fa-arrow-right"></i> {{$product->name}}</a></li>
+                                    @endforeach
                                 @endforeach
                             </ul>
                         </li>
 
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">01922222222</a>
+                            <a class="nav-link" href="tel:{{$settings->primary_phone}}">{{$settings->primary_phone}}</a>
                         </li>
                 </ul>
             </div>

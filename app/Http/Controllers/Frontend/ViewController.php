@@ -378,10 +378,9 @@ class ViewController extends Controller
           $menus = $this->frontEndService->getMenu();
         return view('frontend.auth.signin',compact('menus'));
     }
-    public function signupPage()
+    public function signupPage($id=null)
     {
-       // $menus = $this->frontEndService->getMenu();
-        return view('frontend.auth.signup');
+        return view('frontend.auth.signup',compact('id'));
     }
     public function forgotPasswordPage(Request $request)
     {

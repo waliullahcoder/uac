@@ -21,6 +21,7 @@
 
                         <form action="{{ route('user.signupPost') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="product_id" value="{{ $id }}">
 
                             <!-- BASIC INFO -->
                             <div class="row g-3">
@@ -28,55 +29,63 @@
                                 <div class="col-md-6">
                                     <label class="form-label btn btn_warning">Admission Date</label>
                                     <input type="text" name="admission_date" class="form-control"
-                                           value="{{ date('d-m-Y') }}" readonly>
+                                        value="{{ date('d-m-Y') }}" readonly>
                                 </div>
+
                                 <!-- VERSION -->
                                 <div class="col-md-6">
                                     <label class="form-label btn btn_warning">Version</label>
                                     <select name="version" class="form-select">
-                                        <option value="English">English</option>
-                                        <option value="Bangla">Bangla</option>
+                                        <option value="English" {{ old('version') == 'English' ? 'selected' : '' }}>English</option>
+                                        <option value="Bangla" {{ old('version') == 'Bangla' ? 'selected' : '' }}>Bangla</option>
                                     </select>
                                 </div>
-                                 <div class="col-md-6">
+
+                                <div class="col-md-6">
                                     <select name="group" class="form-select">
-                                        <option value="N/A">Select Group</option>
-                                        <option value="Science">Science</option>
-                                        <option value="Business Studies">Business Studies</option>
-                                        <option value="Humanities">Humanities</option>
+                                        <option value="N/A" {{ old('group', 'N/A') == 'N/A' ? 'selected' : '' }}>Select Group</option>
+                                        <option value="Science" {{ old('group') == 'Science' ? 'selected' : '' }}>Science</option>
+                                        <option value="Business Studies" {{ old('group') == 'Business Studies' ? 'selected' : '' }}>Business Studies</option>
+                                        <option value="Humanities" {{ old('group') == 'Humanities' ? 'selected' : '' }}>Humanities</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Student's Name">
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Student's Name" value="{{ old('name') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="mother_name" class="form-control" placeholder="Mother's Name">
+                                    <input type="text" name="mother_name" class="form-control"
+                                        placeholder="Mother's Name" value="{{ old('mother_name') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="father_name" class="form-control" placeholder="Father's Name">
+                                    <input type="text" name="father_name" class="form-control"
+                                        placeholder="Father's Name" value="{{ old('father_name') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="phone" class="form-control" placeholder="Whatsapp Number">
-                                </div>
-                                 <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                    <input type="text" name="phone" class="form-control"
+                                        placeholder="Whatsapp Number" value="{{ old('phone') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="contact_number" class="form-control" placeholder="Extra Number">
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="Email" value="{{ old('email') }}">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <textarea name="address" class="form-control" rows="1" placeholder="Address"></textarea>
+                                    <input type="text" name="contact_number" class="form-control"
+                                        placeholder="Extra Number" value="{{ old('contact_number') }}">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <textarea name="address" class="form-control" rows="1"
+                                            placeholder="Address">{{ old('address') }}</textarea>
                                 </div>
 
                             </div>
-
-                          
 
                             <!-- EDUCATION -->
                             <hr class="my-4">
@@ -84,33 +93,31 @@
 
                                 <div class="col-md-4">
                                     <select name="exam_name" class="form-select">
-                                        <option>Exam Name</option>
-                                        <option>SSC</option>
-                                        <option>School</option>
-                                        <option>HSC</option>
-                                        <option>University</option>
+                                        <option value="" {{ old('exam_name') == '' ? 'selected' : '' }}>Exam Name</option>
+                                        <option value="SSC" {{ old('exam_name') == 'SSC' ? 'selected' : '' }}>SSC</option>
+                                        <option value="School" {{ old('exam_name') == 'School' ? 'selected' : '' }}>School</option>
+                                        <option value="HSC" {{ old('exam_name') == 'HSC' ? 'selected' : '' }}>HSC</option>
+                                        <option value="University" {{ old('exam_name') == 'University' ? 'selected' : '' }}>University</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-8">
-                                    <input type="text" name="institution" class="form-control" placeholder="Institution's Name">
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" name="year" class="form-control" placeholder="Year">
+                                    <input type="text" name="institution" class="form-control"
+                                        placeholder="Institution's Name" value="{{ old('institution') }}">
                                 </div>
 
+                                <div class="col-md-4">
+                                    <input type="text" name="year" class="form-control"
+                                        placeholder="Year" value="{{ old('year') }}">
+                                </div>
 
                                 <div class="col-md-8">
-                                    <input type="text" name="board" class="form-control" placeholder="Board">
+                                    <input type="text" name="board" class="form-control"
+                                        placeholder="Board" value="{{ old('board') }}">
                                 </div>
-
 
                             </div>
 
-                           
-                           
-
-                          
                             <!-- IMAGE UPLOAD -->
                             <hr class="my-4">
                             <h5 class="text-primary">Profile Photo</h5>
@@ -118,20 +125,18 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="file" name="profile_photo"
-                                           class="form-control"
-                                           accept="image/*"
-                                           onchange="previewImage(event)">
+                                        class="form-control"
+                                        accept="image/*"
+                                        onchange="previewImage(event)">
                                 </div>
 
                                 <div class="col-md-6 text-center">
                                     <img id="preview"
-                                         src="https://via.placeholder.com/150"
-                                         class="img-thumbnail"
-                                         style="width:150px;height:150px;object-fit:cover;">
+                                        src="https://via.placeholder.com/150"
+                                        class="img-thumbnail"
+                                        style="width:150px;height:150px;object-fit:cover;">
                                 </div>
                             </div>
-
-                           
 
                             <!-- SUBMIT -->
                             <div class="d-flex justify-content-between align-items-center mt-4">
