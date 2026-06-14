@@ -141,18 +141,26 @@ class ViewController extends Controller
         return response()->json($products);
     }
 
-    public function categoryPage($cat_id, $slug, $menu)
+    // public function categoryPage($cat_id, $slug, $menu)
+    // {
+    //     $menus = $this->frontEndService->getMenu();
+    //     $authors = $this->frontEndService->getAuthor();
+    //     $publications = $this->frontEndService->getPublication();
+    //     $subcategories = $this->frontEndService->getProductData($cat_id);
+    //     $bookcat_count = Category::where('type', 'book')->where('parent_id', $cat_id)->count();
+    //     $relatedProducts = Product::where('category_id', $cat_id)
+    //                 ->latest()
+    //                 ->take(8)
+    //                 ->get();
+    //     return view('frontend.categories.index', compact('menus','subcategories','authors','publications','bookcat_count','relatedProducts'));
+    // }
+     public function categoryPage($cat_id)
     {
-        $menus = $this->frontEndService->getMenu();
-        $authors = $this->frontEndService->getAuthor();
-        $publications = $this->frontEndService->getPublication();
-        $subcategories = $this->frontEndService->getProductData($cat_id);
-        $bookcat_count = Category::where('type', 'book')->where('parent_id', $cat_id)->count();
-        $relatedProducts = Product::where('category_id', $cat_id)
-                    ->latest()
-                    ->take(8)
-                    ->get();
-        return view('frontend.categories.index', compact('menus','subcategories','authors','publications','bookcat_count','relatedProducts'));
+       $products = Product::whereHas('categories', function ($query) use ($cat_id) {
+            $query->where('category_id', $cat_id);
+        })->get();
+        $category = Category::find($cat_id);
+        return view('frontend.categories.index',compact('category','products'));
     }
     public function singleCategoryPage($sub_cat_id)
     {

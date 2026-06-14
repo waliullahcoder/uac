@@ -112,7 +112,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/products/search', [ViewController::class, 'search'])->name('products.search');
 //Categories
-Route::get('/category/{id}/{slug}/{menu}', [ViewController::class, 'categoryPage'])->name('category.index');
+Route::get('/category/{id}', [ViewController::class, 'categoryPage'])->name('category.index');
 Route::get('/signle/sub/category/{id}', [ViewController::class, 'singleCategoryPage'])->name('category.singleCategoryPage');
 
 //Products

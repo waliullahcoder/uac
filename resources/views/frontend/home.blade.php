@@ -459,7 +459,7 @@
                     @foreach($categories as $category)
                         <div class="home-category-item" id="category-item-214">
 
-                            <a href="#">
+                            <a href="{{route('category.index',$category->id)}}">
                                 <div class="my-course-category">
                                     <div class="my-course-category-icon">
                                         <i class="fa-solid fa-book"></i>
