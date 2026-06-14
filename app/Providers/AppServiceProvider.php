@@ -61,6 +61,15 @@ class AppServiceProvider extends ServiceProvider
                 Category::where('position', 'college')
                     ->get()
             );
+            $view->with(
+                'about',
+                Category::where('position', 'about')->get()
+            );
+            $view->with(
+                'resources',
+                Category::where('position', 'resources')->get()
+            );
+           
              $view->with(
                 'universitycategories',
                 Category::where('position', 'university')

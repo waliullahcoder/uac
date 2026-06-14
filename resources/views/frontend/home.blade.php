@@ -108,93 +108,6 @@
         </section>
 
 
-        <section id="Home_main_banner" class="background-res background-ats py-3 py-lg-5 d-lg-none"
-            style="background-image: url('frontend/images/Background-banner-v5-eid.png')">
-            <div class="course-container d-lg-none">
-                <div class="course-title">Study Room</div>
-
-
-                <div class="d-flex justify-content-center flex-wrap">
-                    <div class="course-box" style="flex: 1 1 100%;">
-                        <a href="#/daily-contents">
-                            <img src="{{asset('frontend/images/daily_update-small-devices.png')}}" alt="" loading="lazy" srcset="">
-                            <p style="color: white;">Daily Updates</p>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="course-section d-flex justify-content-around flex-wrap" style="gap: 5px;">
-                    <div class="course-box" style="flex: 1 1 auto;">
-                        <a href="#/free-course">
-                            <img src="{{asset('frontend/images/hscbag_1732778180651.png')}}" alt="" loading="lazy" srcset="">
-                            <p style="color: white;">Free StudyRoom</p>
-                        </a>
-                    </div>
-                    <div class="course-box" style="flex: 1 1 auto;">
-                        <a href="#/course">
-                            <img src="{{asset('frontend/images/ssc_1732778162589.png')}}" alt="" loading="lazy" srcset="">
-                            <p style="color: white;">Premium Course</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="course-section col-md-12 col-lg-4">
-                    <div class="home-video-feature-area">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="home-feature-video">
-                                    <div class="ratio ratio-1x1"
-                                        style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
-                                        <img class="img img-thumbnail-custom lazyload"
-                                            src="{{asset('frontend/images/recent-job-solution-v1-eid.webp')}}"
-                                            alt="Recent Job Solution Banner"
-                                            style="position: absolute; top: 12%; left: 0; width: 100%; height: 76%;"
-                                            srcset="">
-                                        <!-- Transparent overlay to trigger the click event -->
-                                        <div onclick="showVideoModal('https://www.youtube.com/embed/87jPFaOpFrk?autoplay=1')"
-                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="home-feature-video">
-                                    <div class="ratio ratio-1x1"
-                                        style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
-                                        <img class="img img-thumbnail-custom lazyload"
-                                            src="{{asset('frontend/images/teacher-trip-advice-v1-eid.webp')}}"
-                                            alt="Teachers Tips & Advice Banner"
-                                            style="position: absolute; top: 12%; left: 0; width: 100%; height: 76%;"
-                                            srcset="">
-                                        <!-- Transparent overlay to trigger the click event -->
-                                        <div onclick="showVideoModal('https://www.youtube.com/embed/_UgDurRDFew?autoplay=1')"
-                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="home-feature-video">
-                                    <div class="ratio ratio-1x1"
-                                        style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
-                                        <img class="img img-thumbnail-custom lazyload"
-                                            src="{{asset('frontend/images/app-website-use-rules-v2-eid.webp')}}"
-                                            alt="APP Website Uses Rules Banner"
-                                            style="position: absolute; top: 12%; left: 0; width: 100%; height: 76%;"
-                                            srcset="">
-                                        <!-- Transparent overlay to trigger the click event -->
-                                        <div onclick="showVideoModal('https://www.youtube.com/embed/bwGq8IHxRxI?autoplay=1')"
-                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
         <section id="Home_category" class="background-res background-ats py-5"
             style="background-image: url('frontend/images/home-page-category-bg-v5.webp')">
             <div class="container">
@@ -203,42 +116,18 @@
                         <h1 class="fw-bold custom-section-title">
                             <span>Emergency</span> Desk
                         </h1>
-
-
                     </div>
                 </div>
 
                 <div class="emergency-course-section d-flex justify-content-around flex-wrap">
-                    <a href="#/free-course" class="emergency-box">
-                        <img src="{{asset('frontend/images/free-staudy-room.webp')}}" alt="Free Studyroom" class="img-fluid">
-                        <p class="pointer-cursor text-center text-uppercase">Free Studyroom</p>
+                    @foreach($emergency_desk as $desk)
+                    <a href="{{route('info.page',$desk->id)}}" class="emergency-box">
+                        <img src="{{asset($desk->image)}}" alt="Free Studyroom" class="img-fluid">
+                        <p class="pointer-cursor text-center text-uppercase">{{$desk->name}}</p>
                     </a>
+                    @endforeach
 
-                    <a href="#/guideline" class="emergency-box">
-                        <img src="{{asset('frontend/images/all-job-guidelines-techniques.webp')}}" alt="All Live Class & Techniques"
-                            class="img-fluid">
-                        <p class="pointer-cursor text-center text-uppercase">Live Class</p>
-                    </a>
-
-                    <a href="#/with-zahan-sir" class="emergency-box">
-                        <img src="{{asset('frontend/images/ZahanSir.png')}}" alt="Mukul Sir এর সাথে" class="img-fluid">
-                        <p class="pointer-cursor text-center">Zahan Sir এর সাথে</p>
-                    </a>
-
-                    <a href="#/leaderboard" class="emergency-box">
-                        <img src="{{asset('frontend/images/leader-board.webp')}}" alt="Leader Board" class="img-fluid">
-                        <p class="pointer-cursor text-center text-uppercase">Leader Board</p>
-                    </a>
-
-                    <a href="#/students-review" class="emergency-box">
-                        <img src="{{asset('frontend/images/students-review.webp')}}" alt="Students Review" class="img-fluid">
-                        <p class="pointer-cursor text-center text-uppercase">Students Review</p>
-                    </a>
-
-                    <a href="#/faq" class="emergency-box">
-                        <img src="{{asset('frontend/images/faq.webp')}}" alt="আপনার জিজ্ঞাসা / FAQ" class="img-fluid">
-                        <p class="pointer-cursor text-center text-uppercase">আপনার জিজ্ঞাসা / FAQ</p>
-                    </a>
+                   
 
                 </div>
 
@@ -256,61 +145,21 @@
                 </div>
                 <div class="home-services-area">
                     <div class="row" style="--bs-gutter-x: 0.3rem; !important;">
+                        @foreach($admitted_students as $admit)
                         <div class="col-md-3 col-6 mb-1 dropdown bcs-jobs" id="home-services-area-one">
-                            <a href="#/course">
+                            <a href="{{route('info.page',$admit->id)}}">
                                 <div class="my-home-service premium-course-box">
                                     <div class="my-home-service-icon">
-                                        <img src="{{asset('frontend/images/bcs-job-v5.png')}}" alt="" loading="lazy">
+                                        <img src="{{asset($admit->image)}}" alt="" loading="lazy">
                                     </div>
                                     <div class="my-home-service-content">
-                                        <h3>OUR CLASS</h3>
-                                    </div>
-                                </div>
-                            </a>
-                          
-                        </div>
-                        <div class="col-md-3 col-6 mb-1" id="home-services-area-two" data-toggle="tooltip"
-                            data-placement="bottom" title="Tooltip on bottom">
-                            <a href="#/exam">
-                                <div class="my-home-service premium-course-box" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom"
-                                    data-bs-title="পরীক্ষা হলো শিক্ষার্থীদের জ্ঞান, দক্ষতা এবং শেখার অগ্রগতি মূল্যায়ন করার একটি প্রক্রিয়া। এটি শিক্ষাপ্রতিষ্ঠানে সাধারণত নির্দিষ্ট সময় পর অনুষ্ঠিত হয়।">
-                                    <div class="my-home-service-icon">
-                                        <img src="{{asset('frontend/images/exam-v5.png')}}" alt="" loading="lazy">
-                                    </div>
-                                    <div class="my-home-service-content">
-                                        <h3>EXAMS</h3>
+                                        <h3>{{$admit->name}}</h3>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-3 col-6 mb-1" id="home-services-area-three">
-                            <a href="#" target="_blank">
-                                <div class="my-home-service premium-course-box" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom"
-                                    data-bs-title="বিভিন্ন চাকরি পরীক্ষার জন্য নির্দিষ্ট বই অনুসরণ করুন, যাতে আপনি পুরোপুরি প্রস্তুত হতে পারেন!">
-                                    <div class="my-home-service-icon">
-                                        <img src="{{asset('frontend/images/next-page-v5.png')}}" alt="" loading="lazy">
-                                    </div>
-                                    <div class="my-home-service-content">
-                                        <h3>Result</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-1" id="home-services-area-four">
-                            <a href="#/ielts" target="_blank">
-                                <div class="my-home-service premium-course-box" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom" data-bs-title="">
-                                    <div class="my-home-service-icon">
-                                        <img src="{{asset('frontend/images/it-career-v5.png')}}" alt="" loading="lazy">
-                                    </div>
-                                    <div class="my-home-service-content">
-                                        <h3>Top List</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
             </div>
@@ -331,7 +180,7 @@
                 </div>
                 <div class="home-category-area mt-5">
                     <div class="row justify-content-center">
-                    @foreach($categories as $category)
+                    @foreach($premium_courses as $category)
                         <div class="home-category-item" id="category-item-214">
 
                             <a href="{{route('category.index',$category->id)}}">

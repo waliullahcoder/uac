@@ -53,6 +53,12 @@ class ViewController extends Controller
         $galleries=  Category::where('position','gallery')->get();         
 
         $homeSections = HomeSection::orderBy('serial', 'asc')->get();
+
+        $emergency_desk= Category::where('position', 'emergency_desk')->get();
+        $admitted_students= Category::where('position', 'admitted_students')->get();
+        $premium_courses= Category::where('position', 'premium_courses')->get();
+       
+
         return view('frontend.home', compact(
             'slides', 
             'products',
@@ -60,6 +66,9 @@ class ViewController extends Controller
             'galleries',
             'homeSections',
             'menus',
+            'emergency_desk',
+            'admitted_students',
+            'premium_courses',
             'get_sub_categories_all',
             'get_sub_category_trends_new_book_product_only',
             'get_sub_category_banner_only',

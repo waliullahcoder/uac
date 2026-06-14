@@ -95,10 +95,10 @@
                                 <div class="about-us">
                                     <h3>About Us</h3>
                                     <ul>
-                                        <li><a href="#/about-us">About Us</a></li>
-                                        <li><a href="#/instructor">Instructor</a></li>
-                                        <li><a href="#/refund-policy">Refund Policy</a></li>
-                                        <li><a href="#/contact-us">Contact Us</a></li>
+                                        @foreach($about as $abt)
+                                        <li><a href="{{route('info.page',$abt->id)}}">{{$abt->name}}</a></li>
+                                        @endforeach
+                                       
                                     </ul>
                                 </div>
                             </div>
@@ -106,11 +106,9 @@
                                 <div class="resources">
                                     <h3>Resources</h3>
                                     <ul>
-                                        <li><a href="#/course">Courses</a></li>
-                                        <li><a href="#/blog">Our Blog</a></li>
-                                        <li><a href="#/terms-and-conditions">Terms & Conditions</a>
-                                        </li>
-                                        <li><a href="#/privacy-policy">Privacy Policy</a></li>
+                                       @foreach($resources as $resource)
+                                        <li><a href="{{route('info.page',$resource->id)}}">{{$resource->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
