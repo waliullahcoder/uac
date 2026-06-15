@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 use App\HelperClass;
 class UserController extends Controller
 {
@@ -63,6 +64,31 @@ class UserController extends Controller
         public function signupPost(Request $request)
         {
                
+               
+
+            //     function sms_send() {
+            //     $url = "http://bulksmsbd.net/api/smsapi";
+            //     $api_key = "your api key";
+            //     $senderid = "your sender id";
+            //     $number = "88016xxxxxxxx,88019xxxxxxxx";
+            //     $message = "test sms check";
+            
+            //     $data = [
+            //         "api_key" => $api_key,
+            //         "senderid" => $senderid,
+            //         "number" => $number,
+            //         "message" => $message
+            //     ];
+            //     $ch = curl_init();
+            //     curl_setopt($ch, CURLOPT_URL, $url);
+            //     curl_setopt($ch, CURLOPT_POST, 1);
+            //     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            //     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            //     $response = curl_exec($ch);
+            //     curl_close($ch);
+            //     return $response;
+            // }
           $request->validate([
                 'name'  => 'required|string|max:255',
                 'phone' => [
@@ -211,13 +237,54 @@ class UserController extends Controller
                     'total' => $product->sale_price,
                 ]);
 
+                //SMS Integration
+                $url = "http://bulksmsbd.net/api/smsapi";
+                $api_key = "uXKvElJjc5Ay2QcFNGQI";
+                $senderid = "8809648909116";
+                $number = $request->phone;
+                $message = "Congratulations! You have done registration successfully! Thank you. Please click on this link for Download the Invoice https://uac-bd.com/my-orders";
+
+                $data = [
+                    "api_key" => $api_key,
+                    "senderid" => $senderid,
+                    "number" => $number,
+                    "message" => $message
+                ];
+
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                
+                // ১. ডাটা অবশ্যই URL-encoded কোয়েরি স্ট্রিং এ রূপান্তর করতে হবে
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); 
+                
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                
+                // ২. লাইভ সার্ভারে টাইমআউট হ্যান্ডেল করার জন্য এই ২টি লাইন যোগ করুন
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // কানেক্ট হতে সর্বোচ্চ ১০ সেকেন্ড নিবে
+                curl_setopt($ch, CURLOPT_TIMEOUT, 20);        // মোট রেসপন্স পেতে সর্বোচ্চ ২০ সেকেন্ড নিবে
+
+                $response = curl_exec($ch);
+
+                // ৩. cURL এ কোনো এরর হলে তা লগে দেখার জন্য
+                if (curl_errno($ch)) {
+                    $error_msg = curl_error($ch);
+                    Log::error('BulkSMSBD cURL Error: ' . $error_msg);
+                }
+
+                curl_close($ch);
+
+                // লগে রেসপন্স চেক করুন
+                Log::info('BulkSMSBD API Response: ' . $response);
+               
+
+
                 // Variant stock reduce
                 // if (!empty($product->variants->id) || !empty($product->id)) {
                 //     ProductVariant::where('id', $product->variants?->id)->orWhere('product_id', $product->id)
                 //         ->decrement('stock', 1);
                 // }
-            
-
 
             });
         } catch (\Exception $e) {
