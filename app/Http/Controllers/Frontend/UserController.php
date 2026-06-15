@@ -141,6 +141,7 @@ class UserController extends Controller
                     ]);
 
                     Auth::login($user);
+
                 }
                 $user_id = $user->id;
                 }

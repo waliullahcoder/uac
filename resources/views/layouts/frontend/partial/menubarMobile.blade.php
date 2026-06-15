@@ -63,7 +63,7 @@
 
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="tel:{{$settings->primary_phone}}">{{$settings->primary_phone}}</a>
+                             <a class="nav-link" href="">{{$settings->primary_phone}}, {{$settings->secondary_phone}}</a>
                         </li>
                 </ul>
             </div>

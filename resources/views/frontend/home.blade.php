@@ -43,64 +43,39 @@
        
       <section id="Home_Our_courses" style="padding-top:0px;">
             <div class="container">
+            
                 <div class="all-courses-area">
                     <div class="row g-2 g-md-3 g-lg-4">
-                        @foreach($products as $product)
+                         @foreach($premium_courses as $desk)
                         <div class="col-6 col-lg-3 mt-4">
                             <div class="exam-package-area">
                                 <div class="package-exam-image">
-                                    <a href="{{route('product.details',$product->id)}}"><img
-                                            src="{{asset($product->thumbnail)}}" alt=""
+                                    <a href="{{route('category.index',$desk->id)}}"><img
+                                            src="{{asset($desk->image)}}" alt=""
                                             loading="lazy"></a>
                                 </div>
                                 <div class="package-exam-content mx-2 mx-lg-3">
                                     <div class="package-exam-title pt-3">
                                         <h2>
-                                            <a href="#">{{$product->name}}</a>
+                                            <a href="#">{{$desk->name}}</a>
                                         </h2>
-                                    </div>
-                                    <div class="row button-and-price pb-3 pb-lg-4">
-                                        <div class="col">
-                                            <div class="package-exam-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-
-
-
-                                            <div class="package-exam-price">
-
-                                                <div class="package-exam-total-price text-muted">
-                                                    <s class="text-muted">৳ {{$product->regular_price}}</s>
-                                                </div>
-                                                <div class="package-exam-discount-price">৳ {{$product->sale_price}}</div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col text-end">
-                                            <div class="package-exam-button">
+                                        <div class="package-exam-button">
                                                 <div class="package-exam-details">
-                                                    <a
-                                                        href="{{route('product.details',$product->id)}}">View
+                                                   <a href="{{route('category.index',$desk->id)}}">View
                                                         Details </a>
                                                 </div>
-                                                <a
-                                                    href="{{route('auth.signupPage',$product->id)}}">
-                                                    <div class="custom-btn btn-12">
-                                                        <span>Click on</span><span>Admission</span>
-                                                    </div>
-                                                </a>
                                             </div>
-                                        </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
                         @endforeach
                     </div>
+
+                 
+
+                
 
                   
                 </div>
@@ -126,9 +101,6 @@
                         <p class="pointer-cursor text-center text-uppercase">{{$desk->name}}</p>
                     </a>
                     @endforeach
-
-                   
-
                 </div>
 
             </div>
@@ -246,7 +218,7 @@
                                                 <a
                                                     href="{{route('auth.signupPage',$product->id)}}">
                                                     <div class="custom-btn btn-12">
-                                                        <span>ক্লিক করুন!</span><span>কোর্সটি কিনুন</span>
+                                                        <span>ক্লিক করুন!</span><span>বিস্তারিত</span>
                                                     </div>
                                                 </a>
                                             </div>

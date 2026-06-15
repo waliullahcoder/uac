@@ -41,23 +41,14 @@
                 <th>Email</th>
                 <th>Father</th>
                 <th>Mother</th>
-                <th>DOB</th>
                 <th>Admission</th>
-                <th>Blood</th>
                 <th>Group</th>
                 <th>Exam</th>
                 <th>Institution</th>
                 <th>Board</th>
-                <th>Edu Group</th>
                 <th>Year</th>
-                <th>Grade</th>
-                <th>GPA With 4th</th>
-                <th>GPA Without 4th</th>
-                <th>Payment Method</th>
-                <th>Payment Mobile</th>
+                <th>Extra Number</th>
                 <th>Address</th>
-                <th>Role</th>
-                <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -81,7 +72,7 @@
                         </div>
                     </th>
 
-                    <th colspan="25">
+                    <th colspan="16">
                         <div class="text-end">
                             <button type="button"
                                     id="bulk_delete"
@@ -196,18 +187,8 @@
                     defaultContent: ''
                 },
                 {
-                    data: 'date_of_birth',
-                    name: 'date_of_birth',
-                    defaultContent: ''
-                },
-                {
                     data: 'admission_date',
                     name: 'admission_date',
-                    defaultContent: ''
-                },
-                {
-                    data: 'blood_group',
-                    name: 'blood_group',
                     defaultContent: ''
                 },
                 {
@@ -231,33 +212,8 @@
                     defaultContent: ''
                 },
                 {
-                    data: 'edu_group',
-                    name: 'edu_group',
-                    defaultContent: ''
-                },
-                {
                     data: 'year',
                     name: 'year',
-                    defaultContent: ''
-                },
-                {
-                    data: 'grade',
-                    name: 'grade',
-                    defaultContent: ''
-                },
-                {
-                    data: 'gpa_with_4th',
-                    name: 'gpa_with_4th',
-                    defaultContent: ''
-                },
-                {
-                    data: 'gpa_without_4th',
-                    name: 'gpa_without_4th',
-                    defaultContent: ''
-                },
-                {
-                    data: 'payment_method',
-                    name: 'payment_method',
                     defaultContent: ''
                 },
                 {
@@ -270,27 +226,7 @@
                     name: 'address',
                     defaultContent: ''
                 },
-                {
-                    data: 'role_names',
-                    name: 'role_names',
-                    render: function (data) {
-                        if (Array.isArray(data) && data.length > 0) {
-                            return data.map(role =>
-                                `<span class="badge bg-primary me-1 rounded-0 fw-normal">${role}</span>`
-                            ).join('');
-                        }
-
-                        return '<span class="text-muted">No Role</span>';
-                    },
-                    orderable: false,
-                    searchable: false
-                },
-                {
-                    data: 'status',
-                    name: 'status',
-                    orderable: false,
-                    searchable: false
-                },
+            
                 {
                     data: 'actions',
                     name: 'actions',

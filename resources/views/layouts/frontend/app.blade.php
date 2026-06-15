@@ -61,27 +61,25 @@
                             </div>
                         </div>
                         <div class="footer-logo-text">
-                            <p>For thousands of job seekers across the country,
-                                <br>UAC is the biggest online job preparation platform, a sign of trustworthiness
-                                and hope. Set off on the adventure and enjoy unwavering hospitality.
+                            <p>{{$settings->description}}
                             </p>
                         </div>
                         <div class="footer-social-media-area">
                             <div class="social-media-icon">
                                 <div class="facebook-icon">
-                                    <a href="https://www.facebook.com/biddaabari" target="_blank"><i
+                                    <a href="{{$settings->facebook_page}}" target="_blank"><i
                                             class="fa-brands fa-facebook"></i></a>
                                 </div>
                                 <div class="youtube-icon">
-                                    <a href="https://www.youtube.com/@uac-bd. target="_blank"><i
+                                    <a href="{{$settings->youtube}}" target="_blank"><i
                                             class="fa-brands fa-youtube"></i></a>
                                 </div>
                                 <div class="instagram-icon">
-                                    <a href="https://www.instagram.com/uac-bd.insta" target="_blank"><i
+                                    <a href="{{$settings->instagram}}" target="_blank"><i
                                             class="fa-brands fa-instagram"></i></a>
                                 </div>
                                 <div class="linkedin-icon">
-                                    <a href="https://www.linkedin.com/in/uac-bd. target="_blank"><i
+                                    <a href="{{$settings->linkedin}}" target="_blank"><i
                                             class="fa-brands fa-linkedin"></i></a>
                                 </div>
                             </div>
@@ -118,15 +116,15 @@
                                     <ul>
                                         <li>
                                             <i class="fa-regular fa-envelope"></i>
-                                            <a href="mailto:support@gmail.com">info@uac-bd.com</a>
+                                            <a href="mailto:{{$settings->primary_email}}">{{$settings->primary_email}}</a>
                                         </li>
                                         <li>
                                             <i class="fa-solid fa-phone"></i>
-                                            <a href="tel:+8801894674181">01894674181</a>
+                                            <a href="tel:+{{$settings->primary_phone}}">{{$settings->primary_phone}}</a>
                                         </li>
                                         <li>
                                             <i class="fa-solid fa-location-dot"></i>
-                                            <a href="#/contact-us">ChemiTex BD, UAC Ltd, English Center & Publications Ltd, 3, Arambagh,  Motijheel, Dhaka, Bangladesh</a>
+                                            <a href="#">{{$settings->address}}</a>
                                         </li>
                                     </ul>
                                 </div>

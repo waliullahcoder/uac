@@ -66,7 +66,7 @@
                                                 <a
                                                     href="{{route('auth.signupPage',$product->id)}}">
                                                     <div class="custom-btn btn-12">
-                                                        <span>ক্লিক করুন!</span><span>কোর্সটি কিনুন</span>
+                                                        <span>ক্লিক করুন!</span><span>বিস্তারিত</span>
                                                     </div>
                                                 </a>
                                             </div>

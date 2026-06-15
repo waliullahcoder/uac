@@ -113,7 +113,7 @@
 
                                 <div class="col-md-8">
                                     <input type="text" name="board" class="form-control"
-                                        placeholder="Board" value="{{ old('board') }}">
+                                        placeholder="Class Name for School / Board Name for SSC/HSC" value="{{ old('board') }}">
                                 </div>
 
                             </div>

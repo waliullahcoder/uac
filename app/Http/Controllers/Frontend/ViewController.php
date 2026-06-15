@@ -56,7 +56,7 @@ class ViewController extends Controller
 
         $emergency_desk= Category::where('position', 'emergency_desk')->get();
         $admitted_students= Category::where('position', 'admitted_students')->get();
-        $premium_courses= Category::where('position', 'premium_courses')->get();
+        $premium_courses= Category::where('position', 'premium_courses')->orderBy('serial','ASC')->get();
        
 
         return view('frontend.home', compact(
