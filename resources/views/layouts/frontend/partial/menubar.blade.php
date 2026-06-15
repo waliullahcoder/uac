@@ -24,7 +24,7 @@
 
                         <!-- School Admission -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="schoolDropdown" role="button"
+                            <a class="nav-link dropdown-toggle active" href="#" id="schoolDropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 School Admission
                             </a>
@@ -40,7 +40,7 @@
 
                         <!-- College Admission -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="collegeDropdown" role="button"
+                            <a class="nav-link dropdown-toggle active" href="#" id="collegeDropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 College Admission
                             </a>
@@ -56,7 +56,7 @@
 
                         <!-- University Admission -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="universityDropdown" role="button"
+                            <a class="nav-link dropdown-toggle active" href="#" id="universityDropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 University Admission
                             </a>

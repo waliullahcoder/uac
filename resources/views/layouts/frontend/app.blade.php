@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body style="background:red;">
     @include('layouts.frontend.partial.header')
    @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top:20px;">
