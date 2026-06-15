@@ -46,27 +46,38 @@
             
                 <div class="all-courses-area">
                     <div class="row g-2 g-md-3 g-lg-4">
-                         @foreach($premium_courses as $desk)
+                       @foreach($premium_courses as $desk)
                         <div class="col-6 col-lg-3 mt-4">
-                            <div class="exam-package-area">
-                                <div class="package-exam-image">
-                                    <a href="{{route('category.index',$desk->id)}}"><img
-                                            src="{{asset($desk->image)}}" alt=""
-                                            loading="lazy"></a>
+                            <div class="exam-package-area h-100 shadow-sm border rounded-3 overflow-hidden d-flex flex-column" style="background: #89181A;transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                                
+                                <!-- ইমেজ সেকশন -->
+                                <div class="package-exam-image position-relative overflow-hidden" style="aspect-ratio: 16/9; background: #f8f9fa;">
+                                    <a href="{{route('category.index',$desk->id)}}">
+                                        <img src="{{asset($desk->image)}}" alt="{{$desk->name}}" loading="lazy" class="w-100 h-100" style="object-fit: cover; transition: transform 0.3s ease;">
+                                    </a>
                                 </div>
-                                <div class="package-exam-content mx-2 mx-lg-3">
-                                    <div class="package-exam-title pt-3">
-                                        <h2>
-                                            <a href="#">{{$desk->name}}</a>
+
+                                <!-- কন্টেন্ট সেকশন -->
+                                <div class="package-exam-content p-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                    
+                                    <!-- নতুন ডিজাইনের টাইটেল সেকশন -->
+                                    <div class="package-exam-title mb-3 p-2 rounded-2" style="background-color: #f0f4f8; border-left: 4px solid #0d6efd;">
+                                        <h2 style="font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin: 0;">
+                                            <a href="{{route('category.index',$desk->id)}}" class="text-dark text-decoration-none" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; display: block;">
+                                                {{$desk->name}}
+                                            </a>
                                         </h2>
-                                        <div class="package-exam-button">
-                                                <div class="package-exam-details">
-                                                   <a href="{{route('category.index',$desk->id)}}">View
-                                                        Details </a>
-                                                </div>
-                                            </div>
                                     </div>
                                     
+                                    <!-- ভিউ ডিটেইলস বাটন -->
+                                    <div class="package-exam-button mt-auto">
+                                        <div class="package-exam-details">
+                                            <a href="{{route('category.index',$desk->id)}}" class="btn btn-outline-primary btn-sm w-100 rounded-pill py-2 fw-medium" style="font-size: 0.85rem; letter-spacing: 0.5px;">
+                                                View Details <i class="fas fa-arrow-right ms-1" style="font-size: 0.75rem;"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
