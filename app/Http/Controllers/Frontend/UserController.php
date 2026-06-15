@@ -214,27 +214,27 @@ class UserController extends Controller
             // Order create (NOW WITH TOTALS)
      
             $product = json_decode(Product::find($request->product_id));
+            $amount = $request->amount? $request->amount : $product->sale_price;
        
             $order = Order::create([
                 'user_id'        => $user->id,
                 'order_number'   => 'ORD-' . time(),
-                'subtotal'       => $product->sale_price,
+                'subtotal'       => $amount,
                 'discount'       => 0,
                 'tax'            => 0,
-                'total'          => $product->sale_price,
+                'total'          => $amount,
                 'payment_method' => 'cod',
                 'status'         => 'pending',
             ]);
 
             // Order items + stock reduce
-           
                 OrderItem::create([
                     'order_id' => $order->id,
                     'product_id' => $product->id,
                     'product_variant_id' => $product->variants->id ?? null,
                     'qty' => 1,
-                    'price' => $product->sale_price,
-                    'total' => $product->sale_price,
+                    'price' => $amount,
+                    'total' => $amount,
                 ]);
 
                 //SMS Integration
@@ -278,13 +278,6 @@ class UserController extends Controller
                 // লগে রেসপন্স চেক করুন
                 Log::info('BulkSMSBD API Response: ' . $response);
                
-
-
-                // Variant stock reduce
-                // if (!empty($product->variants->id) || !empty($product->id)) {
-                //     ProductVariant::where('id', $product->variants?->id)->orWhere('product_id', $product->id)
-                //         ->decrement('stock', 1);
-                // }
 
             });
         } catch (\Exception $e) {

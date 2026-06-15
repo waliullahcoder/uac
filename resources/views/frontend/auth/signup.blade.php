@@ -89,53 +89,78 @@
 
                             <!-- EDUCATION -->
                             <hr class="my-4">
-                            <div class="row g-3">
-
-                                <div class="col-md-4">
-                                    <select name="exam_name" class="form-select">
-                                        <option value="" {{ old('exam_name') == '' ? 'selected' : '' }}>Exam Name</option>
-                                        <option value="SSC" {{ old('exam_name') == 'SSC' ? 'selected' : '' }}>SSC</option>
-                                        <option value="School" {{ old('exam_name') == 'School' ? 'selected' : '' }}>School</option>
-                                        <option value="HSC" {{ old('exam_name') == 'HSC' ? 'selected' : '' }}>HSC</option>
-                                        <option value="University" {{ old('exam_name') == 'University' ? 'selected' : '' }}>University</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-8">
-                                    <input type="text" name="institution" class="form-control"
-                                        placeholder="Institution's Name" value="{{ old('institution') }}">
-                                </div>
-
-                                <div class="col-md-4">
-                                    <input type="text" name="year" class="form-control"
-                                        placeholder="Year" value="{{ old('year') }}">
-                                </div>
-
-                                <div class="col-md-8">
-                                    <input type="text" name="board" class="form-control"
-                                        placeholder="Class Name for School / Board Name for SSC/HSC" value="{{ old('board') }}">
-                                </div>
-
+                           <div class="row g-3">
+                            <div class="col-md-4">
+                                <select name="exam_name" id="exam_name" class="form-select">
+                                    <option value="" {{ old('exam_name') == '' ? 'selected' : '' }}>Exam Name</option>
+                                    <option value="SSC" {{ old('exam_name') == 'SSC' ? 'selected' : '' }}>SSC</option>
+                                    <option value="School" {{ old('exam_name') == 'School' ? 'selected' : '' }}>School</option>
+                                    <option value="HSC" {{ old('exam_name') == 'HSC' ? 'selected' : '' }}>HSC</option>
+                                    <option value="University" {{ old('exam_name') == 'University' ? 'selected' : '' }}>University</option>
+                                </select>
                             </div>
+
+                            <div class="col-md-8">
+                                <input type="text" name="institution" class="form-control" placeholder="Institution's Name" value="{{ old('institution') }}">
+                            </div>
+
+                            <div class="col-md-4">
+                                <input type="text" name="year" class="form-control" placeholder="Year" value="{{ old('year') }}">
+                            </div>
+
+                            <div class="col-md-8">
+                                <input type="text" name="board" id="board_input" class="form-control"
+                                    placeholder="Class Name for School / Board Name for SSC/HSC" value="{{ old('board') }}">
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const examSelect = document.getElementById('exam_name');
+                                const boardInput = document.getElementById('board_input');
+
+                                // প্লেসহোল্ডার চেঞ্জ করার ফাংশন
+                                function updatePlaceholder() {
+                                    if (examSelect.value === 'School') {
+                                        boardInput.placeholder = 'Class Name';
+                                    } else if (examSelect.value === 'University') {
+                                        boardInput.placeholder = 'Department / Subject'; // ইউনিভার্সিটি সিলেক্ট করলে যা দেখাতে চান
+                                    } else {
+                                        // ডিফল্ট প্লেসহোল্ডার
+                                        boardInput.placeholder = 'Board';
+                                    }
+                                }
+
+                                // পেজ লোড হওয়ার সাথে সাথে একবার চেক করবে (যদি ওল্ড ডাটা থাকে)
+                                updatePlaceholder();
+
+                                // ড্রপডাউন পরিবর্তন হলে প্লেসহোল্ডার চেঞ্জ হবে
+                                examSelect.addEventListener('change', updatePlaceholder);
+                            });
+                        </script>
 
                             <!-- IMAGE UPLOAD -->
                             <hr class="my-4">
                             <h5 class="text-primary">Profile Photo</h5>
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <input type="file" name="profile_photo"
                                         class="form-control"
                                         accept="image/*"
                                         onchange="previewImage(event)">
                                 </div>
-
-                                <div class="col-md-6 text-center">
+                                <div class="col-md-4 text-center">
                                     <img id="preview"
                                         src="https://via.placeholder.com/150"
                                         class="img-thumbnail"
                                         style="width:150px;height:150px;object-fit:cover;">
                                 </div>
+                                <div class="col-md-4">
+                                <input type="text" name="amount" class="form-control" placeholder="Amount (Special Discount)" value="{{ old('amount') }}">
+                                </div> 
+
+                                
                             </div>
 
                             <!-- SUBMIT -->
