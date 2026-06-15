@@ -41,7 +41,7 @@ class OrderController extends Controller
 
         public function track(Order $order)
         {
-            if ($order->user_id !== auth()->id()) {
+            if ((int)$order->user_id !== auth()->id()) {
                 abort(403);
             }
             
@@ -53,7 +53,7 @@ class OrderController extends Controller
            
         public function show(Order $order)
         {
-            abort_if($order->user_id !== auth()->id(), 403);
+            abort_if((int)$order->user_id !== auth()->id(), 403);
             $menus = $this->frontEndService->getMenu();
             $order->load('items.product', 'items.productVariant');
 
@@ -62,7 +62,7 @@ class OrderController extends Controller
 
         public function invoice(Order $order)
         {
-            abort_if($order->user_id !== auth()->id(), 403);
+            abort_if((int)$order->user_id !== auth()->id(), 403);
 
             $order->load('items.product', 'items.productVariant');
 
