@@ -81,6 +81,9 @@
                                     <option value="university" {{ $data->position == 'university' ? 'selected' : '' }}>
                                         University
                                     </option>
+                                    <option value="bookssale" {{ $data->position == 'bookssale' ? 'selected' : '' }}>
+                                        Books Sale
+                                    </option>
 
                                     <option value="emergency_desk" {{ $data->position == 'emergency_desk' ? 'selected' : '' }}>
                                         Emergency Desk

@@ -19,7 +19,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="schoolDropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                School Admission
+                                School
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="schoolDropdown">
                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-graduation-cap"></i> Class 1-5</a></li>
@@ -35,7 +35,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="collegeDropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                College Admission
+                                College
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="collegeDropdown">
                                @foreach($collegecategories as $ccategory)
@@ -50,13 +50,26 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="universityDropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                University Admission
+                                University
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="universityDropdown">
                                @foreach($universitycategories as $ucategory)
                                     @foreach($ucategory->products as $product)
                                     <li><a class="dropdown-item" href="{{route('auth.signupPage',$product->id)}}"><i class="fa-solid fa-arrow-right"></i> {{$product->name}}</a></li>
                                     @endforeach
+                                @endforeach
+                            </ul>
+                        </li>
+                         <!-- Book Sale-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="https://uac-bd.com/category/470">
+                                Books Sale
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="universityDropdown">
+                                @foreach($bookssalecategories as $salecategory)
+                                 @foreach($salecategory->products as $product)
+                                <li><a class="dropdown-item" href="{{route('auth.signupPage',$product->id)}}"><i class="fa-solid fa-arrow-right"></i> {{$product->name}}</a></li>
+                                 @endforeach
                                 @endforeach
                             </ul>
                         </li>

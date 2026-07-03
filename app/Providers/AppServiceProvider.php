@@ -76,6 +76,10 @@ class AppServiceProvider extends ServiceProvider
                     ->get()
             );
              $view->with(
+                'bookssalecategories',
+                Category::where('position', 'bookssale')->get()
+            );
+             $view->with(
                 'categories_prod',
                 Category::with(['children'])
                                         ->whereNull('parent_id')

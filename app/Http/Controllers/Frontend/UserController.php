@@ -63,9 +63,7 @@ class UserController extends Controller
 
         public function signupPost(Request $request)
         {
-               
-               
-
+          
             //     function sms_send() {
             //     $url = "http://bulksmsbd.net/api/smsapi";
             //     $api_key = "your api key";
@@ -89,7 +87,9 @@ class UserController extends Controller
             //     curl_close($ch);
             //     return $response;
             // }
-          $request->validate([
+
+            if(!$request->user_id){
+               $request->validate([
                 'name'  => 'required|string|max:255',
                 'phone' => [
                     'required',
@@ -102,10 +102,13 @@ class UserController extends Controller
                 'phone.regex'    => 'Please enter a valid Bangladeshi phone number',
                 'phone.unique'   => 'This phone number already exists',
             ]);
+            }
             try {
             DB::transaction(function () use ($request) {
              // Create User section
                 $user = null;
+
+              if(!$request->user_id){   
             if ($request->phone || $request->name) {
                 $user = User::query()
                     ->when($request->phone, function ($q) use ($request) {
@@ -211,13 +214,16 @@ class UserController extends Controller
                     'created_by' => Auth::id(),
                 ]);
 
+
+              }
+
             // Order create (NOW WITH TOTALS)
      
             $product = json_decode(Product::find($request->product_id));
             $amount = $request->amount? $request->amount : $product->sale_price;
        
             $order = Order::create([
-                'user_id'        => $user->id,
+                'user_id'        => $request->user_id ? $request->user_id : $user->id,
                 'order_number'   => 'ORD-' . time(),
                 'subtotal'       => $amount,
                 'discount'       => 0,
@@ -238,45 +244,45 @@ class UserController extends Controller
                 ]);
 
                 //SMS Integration
-                $url = "http://bulksmsbd.net/api/smsapi";
-                $api_key = "uXKvElJjc5Ay2QcFNGQI";
-                $senderid = "8809648909116";
-                $number = $request->phone;
-                $message = "Congratulations! You have done registration successfully! Thank you. Please click on this link for Download the Invoice https://uac-bd.com/my-orders";
+                // $url = "http://bulksmsbd.net/api/smsapi";
+                // $api_key = "uXKvElJjc5Ay2QcFNGQI";
+                // $senderid = "8809648909116";
+                // $number = $request->phone;
+                // $message = "Congratulations! You have done registration successfully! Thank you. Please click on this link for Download the Invoice https://uac-bd.com/my-orders";
 
-                $data = [
-                    "api_key" => $api_key,
-                    "senderid" => $senderid,
-                    "number" => $number,
-                    "message" => $message
-                ];
+                // $data = [
+                //     "api_key" => $api_key,
+                //     "senderid" => $senderid,
+                //     "number" => $number,
+                //     "message" => $message
+                // ];
 
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // curl_setopt($ch, CURLOPT_POST, 1);
                 
-                // ১. ডাটা অবশ্যই URL-encoded কোয়েরি স্ট্রিং এ রূপান্তর করতে হবে
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); 
+                // // ১. ডাটা অবশ্যই URL-encoded কোয়েরি স্ট্রিং এ রূপান্তর করতে হবে
+                // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); 
                 
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 
-                // ২. লাইভ সার্ভারে টাইমআউট হ্যান্ডেল করার জন্য এই ২টি লাইন যোগ করুন
-                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // কানেক্ট হতে সর্বোচ্চ ১০ সেকেন্ড নিবে
-                curl_setopt($ch, CURLOPT_TIMEOUT, 20);        // মোট রেসপন্স পেতে সর্বোচ্চ ২০ সেকেন্ড নিবে
+                // // ২. লাইভ সার্ভারে টাইমআউট হ্যান্ডেল করার জন্য এই ২টি লাইন যোগ করুন
+                // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // কানেক্ট হতে সর্বোচ্চ ১০ সেকেন্ড নিবে
+                // curl_setopt($ch, CURLOPT_TIMEOUT, 20);        // মোট রেসপন্স পেতে সর্বোচ্চ ২০ সেকেন্ড নিবে
 
-                $response = curl_exec($ch);
+                // $response = curl_exec($ch);
 
-                // ৩. cURL এ কোনো এরর হলে তা লগে দেখার জন্য
-                if (curl_errno($ch)) {
-                    $error_msg = curl_error($ch);
-                    Log::error('BulkSMSBD cURL Error: ' . $error_msg);
-                }
+                // // ৩. cURL এ কোনো এরর হলে তা লগে দেখার জন্য
+                // if (curl_errno($ch)) {
+                //     $error_msg = curl_error($ch);
+                //     Log::error('BulkSMSBD cURL Error: ' . $error_msg);
+                // }
 
-                curl_close($ch);
+                // curl_close($ch);
 
-                // লগে রেসপন্স চেক করুন
-                Log::info('BulkSMSBD API Response: ' . $response);
+                // // লগে রেসপন্স চেক করুন
+                // Log::info('BulkSMSBD API Response: ' . $response);
                
 
             });
@@ -285,11 +291,16 @@ class UserController extends Controller
             return back()->withErrors($e->getMessage());
         }
 
-          
+           if(!$request->user_id){
 
             return redirect()
                 ->route('frontend.user.dashboard')
                 ->with('success', 'Welcome 🎉 Account created successfully');
+           }else{
+             return redirect()
+                ->route('frontend.user.dashboard')
+                ->with('success', 'Welcome 🎉 Order created successfully');
+           }    
         }
 
    

@@ -14,7 +14,13 @@
                 <div class="card shadow-lg border-0 rounded-4">
 
                     <div class="card-header text-white text-center py-3" style="background:#dd1b1b;">
-                        <h4 class="mb-0">Student Registration Form</h4>
+                @if(Auth::check())
+                 <h4 class="mb-0">Welcome {{ Auth::user()->name }} !! Please confirm for Order</h4>
+                
+                @else
+                      <h4 class="mb-0">Student Registration Form</h4>
+                @endif
+                      
                     </div>
 
                     <div class="card-body p-4">
@@ -22,6 +28,72 @@
                         <form action="{{ route('user.signupPost') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $id }}">
+
+                             @if(Auth::check())
+                              @php
+                                    $product = App\Models\Product::find($id);
+                                @endphp
+
+                                <div class="alert alert-success border-0 shadow-sm rounded-3">
+
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h5 class="fw-bold mb-0">
+                                            <i class="fa fa-box text-success"></i>
+                                            Course/Book/Guide
+                                        </h5>
+
+                                        <span class="badge bg-success fs-6">
+                                            Ready to Enroll/Purchase
+                                        </span>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <h4 class="fw-bold text-dark">
+                                                {{ $product->name }}
+                                            </h4>
+
+                                            <p class="text-muted mb-0">
+                                                Thank you for choosing this course/product.
+                                            </p>
+                                        </div>
+
+                                        <div class="col-md-4 text-end">
+
+                                            <h3 class="text-danger fw-bold">
+                                                ৳ {{ number_format($product->sale_price,2) }}
+                                            </h3>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <input type="hidden"
+                                    name="user_id"
+                                    value="{{ Auth::user()->id }}">
+
+                                <input type="hidden"
+                                    name="product_id"
+                                    value="{{ $product->id }}">
+
+                                <input type="hidden"
+                                    name="amount"
+                                    value="{{ $product->sale_price }}">
+
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-success btn-lg rounded-pill">
+                                        <i class="fa fa-check-circle me-2"></i>
+                                        Confirm
+                                    </button>
+                                </div>
+
+                             @else
+                             
 
                             <!-- BASIC INFO -->
                             <div class="row g-3">
@@ -163,16 +235,20 @@
                                 
                             </div>
 
+                          
                             <!-- SUBMIT -->
                             <div class="d-flex justify-content-between align-items-center mt-4">
+                                 @if(Auth::check())
+                                 @else
                                 <a href="{{ route('auth.signinPage') }}" class="text-decoration-none">
                                     Already have an account? <strong>Sign In</strong>
                                 </a>
+                                @endif
                                 <button type="submit" class="btn btn-success px-4">
                                     Submit Form
                                 </button>
                             </div>
-
+                            @endif
                         </form>
 
                     </div>

@@ -56,6 +56,9 @@
                                      <option value="university" {{ old('position') == 'university' ? 'selected' : '' }}>
                                         University
                                     </option>
+                                    <option value="bookssale" {{ old('position') == 'bookssale' ? 'selected' : '' }}>
+                                        Books Sale
+                                    </option>
                                     <option value="emergency_desk" {{ old('position') == 'emergency_desk' ? 'selected' : '' }}>
                                         Emergency Desk
                                     </option>
