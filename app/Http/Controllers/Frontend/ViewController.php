@@ -45,7 +45,7 @@ class ViewController extends Controller
         //ব্র্যান্ডসমূহ
         $get_sub_category_brand_only = $this->frontEndService->getSubCategoryBrandOnly();
 
-        $products=Product::get();
+        $products=Product::orderBy('serial', 'asc')->get();
         $vediocategories= Category::whereNotNull('parent_id')
                     ->where('position', 'video')
                     ->get();
@@ -167,9 +167,17 @@ class ViewController extends Controller
     {
        $products = Product::whereHas('categories', function ($query) use ($cat_id) {
             $query->where('category_id', $cat_id);
-        })->get();
+        })->orderBy('serial', 'asc')->get();
         $category = Category::find($cat_id);
-        return view('frontend.categories.index',compact('category','products'));
+        return view('frontend.categories.index',compact('category','products','cat_id'));
+    }
+    public function catOfOnline($cat_id,$type)
+    {
+       $products = Product::whereHas('categories', function ($query) use ($cat_id) {
+            $query->where('category_id', $cat_id);
+        })->where('product_type',$type)->orderBy('serial', 'asc')->get();
+        $category = Category::find($cat_id);
+        return view('frontend.categories.indexOfOnline',compact('category','products','cat_id','type'));
     }
     public function singleCategoryPage($sub_cat_id)
     {

@@ -31,7 +31,7 @@ background-attachment: fixed;; border: 1px solid #dee2e6;">
 
                         <!-- ক্যাটাগরি মেইন টাইটেল -->
                         <h1 class="fw-extrabold text-dark m-0" style="color:#ffff12 !important;font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px;">
-                            {{$category->name}}
+                            {{$category->name}} ({{$type}})
                         </h1>
                         
                         <!-- নিচের ছোট ডিভাইডার লাইন -->
@@ -39,13 +39,6 @@ background-attachment: fixed;; border: 1px solid #dee2e6;">
                     </div>
                 </div>
             </div>
-
-            <div class="emergency-course-section d-flex justify-content-around flex-wrap">
-                  
-                    <a href="{{ route('category.indexOfOnline', ['id' => $cat_id, 'type' => 'offline']) }}" class="emergency-box"> <p class="pointer-cursor text-center text-uppercase" style="font-weight:bold;font-size:32px">OFFLINE</p> </a>
-                     <a href="{{ route('category.indexOfOnline', ['id' => $cat_id, 'type' => 'online']) }}" class="emergency-box"> <p class="pointer-cursor text-center text-uppercase" style="font-weight:bold;font-size:32px">ONLINE</p> </a>
-                    
-                </div>
         <!-- Course Section -->
         <div class="all-courses-area">
             <div class="row" id="shorting-data">
