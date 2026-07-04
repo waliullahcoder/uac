@@ -13,7 +13,12 @@
                 <div class="col-12">
                     <!-- মডার্ন হাইলাইটেড ব্যাকগ্রাউন্ড বক্স -->
                     <div class="title-area text-center p-4 p-md-5 rounded-4 shadow-sm position-relative overflow-hidden" 
-                        style="background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%); border: 1px solid #dee2e6;">
+                        style="background: url('{{ asset('frontend/images/head.png') }}');
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;; border: 1px solid #dee2e6;">
                         
                         <!-- ব্যাকগ্রাউন্ডে হালকা একটি ডেকোরেটিভ গ্লো বা বৃত্ত (ঐচ্ছিক, লুক সুন্দর করার জন্য) -->
                         <div class="position-absolute rounded-circle" style="width: 150px; height: 150px; background: rgba(13, 110, 253, 0.05); top: -50px; right: -30px;"></div>

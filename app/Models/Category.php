@@ -80,7 +80,8 @@ class Category extends Model
     {
         return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id')
                     ->with('variants')
-                    ->where('status', 1); // only active products
+                    ->where('status', 1)// only active products
+                    ->orderBy('serial', 'asc');
     }
 
     /**
