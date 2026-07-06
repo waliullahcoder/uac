@@ -34,11 +34,11 @@
                         <div class="col-12">
                                     <label for="type" class="form-label"><b>Type</b></label>
                                     <select name="type" id="type" class="form-select" required>
-                                      <option value="book" {{ old('book') == 'book' ? 'selected' : '' }}>
-                                        Book
+                                      <option value="offline" {{ old('offline') == 'offline' ? 'selected' : '' }}>
+                                        offline
                                     </option>
-                                    <option value="other" {{ old('other') == 'other' ? 'selected' : '' }}>
-                                        Other
+                                    <option value="other" {{ old('online') == 'online' ? 'selected' : '' }}>
+                                        online
                                     </option>
                                 </select>
                         </div>

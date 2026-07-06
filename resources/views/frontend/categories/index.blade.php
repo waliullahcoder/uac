@@ -42,8 +42,8 @@ background-attachment: fixed;; border: 1px solid #dee2e6;">
 
             <div class="emergency-course-section d-flex justify-content-around flex-wrap">
                   
-                    <a href="{{ route('category.indexOfOnline', ['id' => $cat_id, 'type' => 'offline']) }}" class="emergency-box"> <p class="pointer-cursor text-center text-uppercase" style="font-weight:bold;font-size:32px">OFFLINE</p> </a>
-                     <a href="{{ route('category.indexOfOnline', ['id' => $cat_id, 'type' => 'online']) }}" class="emergency-box"> <p class="pointer-cursor text-center text-uppercase" style="font-weight:bold;font-size:32px">ONLINE</p> </a>
+                    <a href="{{ route('category.indexOfOnline', ['id' => $cat_id, 'type' => 'offline']) }}" class="emergency-box"> <p class="pointer-cursor text-center text-uppercase" style="font-weight:bold;font-size:22px">OFFLINE</p> </a>
+                     <a href="{{ route('category.indexOfOnline', ['id' => $cat_id, 'type' => 'online']) }}" class="emergency-box"> <p class="pointer-cursor text-center text-uppercase" style="font-weight:bold;font-size:22px">ONLINE</p> </a>
                     
                 </div>
         <!-- Course Section -->
@@ -79,7 +79,7 @@ background-attachment: fixed;; border: 1px solid #dee2e6;">
                                             <div class="package-exam-price">
 
                                                 <div class="package-exam-total-price text-muted">
-                                                    <s class="text-muted">৳ {{$product->regular_price}}</s>
+                                                    <s class="text-muted">৳ {{$product->regular_price}}</s><br><span style="font-size: 12px;color: green;">(Off {{$product->discount}}৳ )</span>
                                                 </div>
                                                 <div class="package-exam-discount-price">৳ {{$product->sale_price}}</div>
                                             </div>

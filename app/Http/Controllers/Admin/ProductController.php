@@ -70,8 +70,7 @@ class ProductController extends Controller
      public function index()
         {
             $query = $this->model::with(['categories', 'uom', 'edition'])
-                ->select('id','code','name','uom_id','thumbnail','status')
-                ->where('product_type', 'book');
+                ->select('id','code','name','uom_id','thumbnail','status');
 
             // 🔥 Role ভিত্তিক condition
             if (Auth::user()->role_status == 3) {

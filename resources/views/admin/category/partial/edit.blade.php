@@ -57,11 +57,11 @@
                      <div class="col-12">
                                     <label for="type" class="form-label"><b>Type</b></label>
                                     <select name="type" id="type" class="form-select" required>
-                                      <option value="book" {{ $data->type == 'book' ? 'selected' : '' }}>
-                                        Book
+                                      <option value="offline" {{ $data->type == 'offline' ? 'selected' : '' }}>
+                                        offline
                                     </option>
-                                    <option value="other" {{ $data->type == 'other' ? 'selected' : '' }}>
-                                        Other
+                                    <option value="online" {{ $data->type == 'online' ? 'selected' : '' }}>
+                                        online
                                     </option>
                                 </select>
                         </div>

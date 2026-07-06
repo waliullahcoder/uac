@@ -206,7 +206,7 @@
                                             <div class="package-exam-price">
 
                                                 <div class="package-exam-total-price text-muted">
-                                                    <s class="text-muted">৳ {{$product->regular_price}}</s>
+                                                    <s class="text-muted">৳ {{$product->regular_price}}</s> <br><span style="font-size: 12px;color: green;">(Off {{$product->discount}}৳ )</span>
                                                 </div>
                                                 <div class="package-exam-discount-price">৳ {{$product->sale_price}}</div>
                                             </div>
