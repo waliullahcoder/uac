@@ -15,7 +15,7 @@
 
                     <div class="card-header text-white text-center py-3" style="background:#dd1b1b;">
                 @if(Auth::check())
-                 <h4 class="mb-0">Welcome {{ Auth::user()->name }} !! Please confirm for Order</h4>
+                 <h4 class="mb-0">Welcome {{ Auth::user()->name }} !! Please confirm for admission/order</h4>
                 
                 @else
                       <h4 class="mb-0">Student Registration Form</h4>
@@ -28,52 +28,57 @@
                         <form action="{{ route('user.signupPost') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $id }}">
-
-                             @if(Auth::check())
-                              @php
+                                @php
                                     $product = App\Models\Product::find($id);
                                 @endphp
 
-                                <div class="alert alert-success border-0 shadow-sm rounded-3">
-
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h5 class="fw-bold mb-0">
-                                            <i class="fa fa-box text-success"></i>
-                                            Course/Book/Guide
-                                        </h5>
-
-                                        <span class="badge bg-success fs-6">
-                                            Ready to Enroll/Purchase
-                                        </span>
-                                    </div>
-
-                                    <hr>
-
-                                    <div class="row">
-
-                                        <div class="col-md-8">
-                                            <h4 class="fw-bold text-dark">
-                                                {{ $product->name }}
-                                            </h4>
-
-                                            <p class="text-muted mb-0">
-                                                Thank you for choosing this course/product.
-                                            </p>
+                             @if(Auth::check())
+                              
+                                <div class="card shadow sticky-top" style="top:20px">
+                                        <div class="card-header bg-dark text-white">
+                                            <h5 class="mb-0">
+                                                <i class="fa fa-cart-shopping me-2"></i>
+                                                Summary
+                                            </h5>
                                         </div>
 
-                                        <div class="col-md-4 text-end">
+                                        <div class="card-body">
+                                        
+                                        <div class="d-flex justify-content-between mb-2">
+                                                <img id="preview" 
+                                                src="{{asset($product->thumbnail)}}"
+                                                class="img-thumbnail"
+                                                style="max-width:100%;height:auto;object-fit:cover;">
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Course/Guide/Book</span>
+                                                <strong> {{$product->name}}</strong>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Date *</span>
+                                                <strong> <input type="text" name="admission_date" class="form-control" value="{{ date('d-m-Y') }}" readonly></strong>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Price</span>
+                                                <strong> ৳ {{ number_format($product->regular_price,2) }}</strong>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span>Discount</span>
+                                                <strong> ৳ {{ number_format($product->discount,2) }}</strong>
+                                            </div>
 
-                                            <h3 class="text-danger fw-bold">
-                                                ৳ {{ number_format($product->sale_price,2) }}
-                                            </h3>
+                                            
+                                            <hr>
 
-                                        </div>
+                                            <div class="d-flex justify-content-between fs-5">
+                                                <strong>Total</strong>
+                                                <strong class="text-primary">
+                                                    ৳ {{ number_format($product->sale_price,2) }}
+                                                </strong>
+                                            </div>
 
-                                    </div>
-
-                                </div>
-
-                                <input type="hidden"
+                                            <hr>
+                                          <input type="hidden"
                                     name="user_id"
                                     value="{{ Auth::user()->id }}">
 
@@ -84,17 +89,97 @@
                                 <input type="hidden"
                                     name="amount"
                                     value="{{ $product->sale_price }}">
+   
+                                    <input type="hidden" name="group" value="sales">
+                                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-3">
+                                                <i class="fa fa-lock me-2"></i>
+                                                Confirm
+                                            </button>
 
-                                <div class="d-grid mt-4">
-                                    <button type="submit" class="btn btn-success btn-lg rounded-pill">
-                                        <i class="fa fa-check-circle me-2"></i>
-                                        Confirm
-                                    </button>
-                                </div>
+                                        </div>
+                                    </div>
 
+
+                               
+                               
                              @else
-                             
+  @if($cat_id==470)
+  <div class="card shadow sticky-top" style="top:20px">
+    <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">
+            <i class="fa fa-cart-shopping me-2"></i>
+            Order Summary
+        </h5>
+    </div>
 
+    <div class="card-body">
+    
+      <div class="d-flex justify-content-between mb-2">
+            <img id="preview" 
+            src="{{asset($product->thumbnail)}}"
+            class="img-thumbnail"
+             style="max-width:100%;height:auto;object-fit:cover;">
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Course/Guide/Book</span>
+            <strong> {{$product->name}}</strong>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Order Date *</span>
+            <strong> <input type="text" name="admission_date" class="form-control" value="{{ date('d-m-Y') }}" readonly></strong>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Sale Price</span>
+            <strong> ৳ {{ number_format($product->sale_price,2) }}</strong>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+            <span>Name *</span>
+            <strong><input type="text" name="name" class="form-control" placeholder="Student's Name" value="{{ old('name') }}" required></strong>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+            <span>Phone *</span>
+            <strong>
+<input type="text" name="user_name" class="form-control" placeholder="Student's phone" value="{{ old('phone') }}" required></strong>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+            <span>Whatsapp Number *</span>
+            <strong>
+<input type="text" name="phone" class="form-control" placeholder="Whatsapp Number" value="{{ old('phone') }}" required></strong>
+        </div>
+        <hr>
+
+
+        <div class="d-flex justify-content-between text-success">
+            <span>Address *</span>
+            <strong>
+<input type="text" name="address" class="form-control" placeholder="Student's address" value="{{ old('address') }}" required></strong>
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between fs-5">
+            <strong>Total</strong>
+            <strong class="text-primary">
+                ৳ {{ number_format($product->sale_price,2) }}
+            </strong>
+        </div>
+
+        <hr>
+        
+<input type="hidden" name="group" value="sales">
+        <button type="submit" class="btn btn-primary w-100 rounded-pill py-3">
+            <i class="fa fa-lock me-2"></i>
+            Confirm
+        </button>
+
+    </div>
+</div>
+
+
+@else
                             <!-- BASIC INFO -->
                             <div class="row g-3">
 
@@ -234,7 +319,7 @@
 
                                 
                             </div>
-
+@endif
                           
                             <!-- SUBMIT -->
                             <div class="d-flex justify-content-between align-items-center mt-4">

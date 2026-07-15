@@ -85,12 +85,21 @@ background-attachment: fixed;; border: 1px solid #dee2e6;">
                                                         href="{{route('product.details',$product->id)}}">View
                                                         Details </a>
                                                 </div>
+                                                 @if($cat_id==470)
+                                                <a
+                                                    href="{{route('auth.signupPage',['id'=>$product->id,'cat_id'=>470])}}">
+                                                    <div class="custom-btn btn-12">
+                                                        <span>ক্লিক করুন!</span><span>Order Now</span>
+                                                    </div>
+                                                </a>
+                                                @else
                                                 <a
                                                     href="{{route('auth.signupPage',$product->id)}}">
                                                     <div class="custom-btn btn-12">
                                                         <span>ক্লিক করুন!</span><span>বিস্তারিত</span>
                                                     </div>
                                                 </a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
