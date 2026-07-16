@@ -50,6 +50,7 @@ class User extends Authenticatable
         // Payment Information
         'payment_method',
         'payment_mobile',
+        'trans_id',
 
         // System
         'role_status',

@@ -28,6 +28,13 @@
                                 My Orders
                             </a>
                         </li>
+                         <li class="list-group-item">
+                            <a href="{{route('frontend.user.checkout')}}" class="d-flex align-items-center gap-2">
+                                <i class="fa fa-credit-card"></i>
+                                Payment
+                            </a>
+                        </li>
+
 
                         <li class="list-group-item">
                             <a href="{{ route('wishlist.index') }}" class="d-flex align-items-center gap-2">
@@ -35,6 +42,7 @@
                                 Wishlist
                             </a>
                         </li>
+                        
 
                          <li class="list-group-item">
                             <a href="{{route('frontend.user.invoiceHistory')}}" class="d-flex align-items-center gap-2">

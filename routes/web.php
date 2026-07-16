@@ -85,6 +85,8 @@ Route::post('/product/{product}/review',[ReviewController::class, 'store']
 Route::middleware(['auth'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'dashboard'])
         ->name('frontend.user.dashboard');
+        Route::get('/user/payment', [UserController::class, 'payment'])
+        ->name('frontend.user.checkout');
     Route::get('/user/profile/edit', [UserController::class, 'updateEditProfile'])
     ->name('user.profile.edit');
     Route::post('/user/profile/update', [UserController::class, 'updateProfile'])

@@ -291,18 +291,21 @@ class UserController extends Controller
             return back()->withErrors($e->getMessage());
         }
 
-           if(!$request->user_id){
-
-            return redirect()
-                ->route('frontend.user.dashboard')
-                ->with('success', 'Welcome 🎉 Account created successfully');
-           }else{
-             return redirect()
-                ->route('frontend.user.dashboard')
+           if($request->group=='sales'){
+               return redirect()
+                ->route('frontend.user.checkout')
                 ->with('success', 'Welcome 🎉 Order created successfully');
+            
+           }else{
+            return redirect()
+                ->route('frontend.user.checkout')
+                ->with('success', 'Welcome 🎉 Account created successfully');
            }    
         }
-
+    public function payment(Request $request)
+    {
+              return view('frontend.user.checkout');
+    }
    
     public function forgotPasswordPost(Request $request)
     {
@@ -337,9 +340,9 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        if (auth()->user()->role_status != 0) {
-            abort(403);
-        }
+        // if (auth()->user()->role_status != 0) {
+        //     abort(403);
+        // }
         $menus = $this->frontEndService->getMenu();
         
         $client = Client::where('user_id', Auth::user()->id)->first();
@@ -417,6 +420,7 @@ class UserController extends Controller
 
             $user->payment_method     = $request->payment_method;
             $user->payment_mobile     = $request->payment_mobile;
+            $user->trans_id     = $request->trans_id;
             $user->version            = $request->version;
 
             $user->save();
@@ -438,6 +442,15 @@ class UserController extends Controller
                 );
             }
             $user->save();
+            if(isset($request->type) && $request->type=="checkout"){
+                $order=Order::where('user_id',$user->id)->orderBy('id','desc')->first();
+                $order->update([
+                    'payment_method'=> $request->payment_method
+                ]);
+                return redirect()
+                ->route('frontend.user.dashboard')
+                ->with('success', 'Congratulations! Payment Submitted successfully');
+            }
 
             return back()->with('success', 'Profile updated successfully');
         }

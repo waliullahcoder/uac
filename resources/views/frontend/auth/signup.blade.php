@@ -85,12 +85,14 @@
                                 <input type="hidden"
                                     name="product_id"
                                     value="{{ $product->id }}">
-
+                                    @if($cat_id==470)
+                               <input type="hidden" name="group" value="sales">
+                                    @endif
+ 
                                 <input type="hidden"
                                     name="amount"
                                     value="{{ $product->sale_price }}">
    
-                                    <input type="hidden" name="group" value="sales">
                                             <button type="submit" class="btn btn-primary w-100 rounded-pill py-3">
                                                 <i class="fa fa-lock me-2"></i>
                                                 Confirm
